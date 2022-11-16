@@ -53,6 +53,7 @@ p {
   display: flex;
   flex-direction: row;
   width: 80%;
+  align-self: center;
 }
 
 nav {
@@ -95,7 +96,7 @@ section {
   padding-bottom: 2rem;
 }
 
-#header-container {
+#layout-container {
   width: 90vw;
   margin: 0 auto;
   background-image: url("../images/sky.jpg"), linear-gradient(#eb01a5, #d13531);

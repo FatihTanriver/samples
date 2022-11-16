@@ -25,7 +25,16 @@
       else {
         changeLanguage(langKey);
       }
+
+      $(".section-link").click(function () {
+        toggleMobileMenu();
+      });
+
     });
+
+
+
+
 
     function toggleMobileMenu() {
       $(".nav-links").toggleClass("d-xs-none");
@@ -37,8 +46,7 @@
 </head>
 
 <body>
-
-  <div id="header-container">
+  <div id="layout-container">
     <section id="header" class="pt-3">
       <h2 data-lang="data6">Klinik Psikolog</h2>
     </section>
@@ -63,8 +71,9 @@
       <div class="nav-links d-xs-none">
 
         <a data-lang="data1" class="section-link" href="#section-intro">Start</a>
-        <a data-lang="data2" class="section-link" href="#section-therapy">Psychotherapie</a>
         <a data-lang="data3" class="section-link" href="#section-consult">Psychologische Beratung</a>
+        <a data-lang="data2" class="section-link" href="#section-kid">Psychotherapie</a>
+
         <a data-lang="data4" class="section-link" href="#section-about">Über mich</a>
       </div>
 
@@ -72,16 +81,13 @@
     </nav>
 
     <section id="section-header2" class="full-screen">
-      <header class="pt-3">
+      <header class="">
         <h1 class="mt-2 mb-4">Firat Turan</h1>
         <!--<h2 data-lang="data6">Klinik Psikolog</h2>-->
         <h2 data-lang="data7">Yetiskin,Aile, Cocuk ve Ergen Psikolijik Danismanligi</h2>
       </header>
     </section>
 
-    <div style="height: 0.2rem; background-color: white;">
-
-    </div>
     <section id="section-intro" class="section-color-1 pt-3 pb-3">
       <div class="intro-container flex-row ">
         <div class="flxc-lg-2 flxc-md-1 flxc-sm-1 flex-xs-1 ">
@@ -143,136 +149,131 @@
             blanditiis dicta ea eos odio aliquam libero officiis!
           </p>
         </div>
-        <div class="feature-box flxc-lg-4 flxc-md-3 flxc-sm-2 flxc-xs-1 ">
+        <!--<div class="feature-box flxc-lg-4 flxc-md-3 flxc-sm-2 flxc-xs-1 ">
           <img class="mt-2 mb-4" src="images/accessibility-outline.svg" style="width:6rem" alt="test icon">
           <h3 class="mb-3"> Explore the world</h3>
           <p>
             Dolor sit amet consectetur, adipisicing elit. Consequatur rerum
             blanditiis dicta ea eos odio aliquam libero officiis!
           </p>
-        </div>
+        </div>-->
       </div>
     </section>
+
+
+    <section id="section-consult" class="full-screen section-color-3">
+      <article>
+
+        <h2 class="mt-3">Psychotherapie und Beratung</h2>
+        <h4 class="mt-2 mb-2">Psychotherapie</h4>
+
+        <div class="w-80 mx-auto">
+          <p>Als approbierte Psychologische Psychotherapeutin mit dem Schwerpunkt Verhaltenstherapie orientiert sich
+            meine
+            Behandlung an den neuesten wissenschaftlichen Standards.</p>
+          <p>Die Verhaltenstherapie ist ein wissenschaftlich fundierter, evidenzbasierter therapeutischer Ansatz, dessen
+            Wirksamkeit in zahlreichen Studien nachgewiesen wurde.
+
+            Sie geht davon aus, dass Gedanken, Gefühle und Verhaltensweisen im engen Zusammenhang stehen und durch
+            frühere
+            Erfahrungen erlernt werden, womit sie einen entscheidenden Einfluss auf unsere Lebensgestaltung haben. Unter
+            bestimmten Bedingungen können diese erlernten Erlebens- und Verhaltensmuster jedoch zu Störungen und
+            Problemen
+            beitragen. </p>
+          <p>Im Mittelpunkt der Behandlung steht die Veränderung von ungünstig erworbenen Denkmustern und
+            Verhaltensweisen.Dabei sollen die in den Sitzungen gewonnenen Erkenntnisse und Einsichten in den Alltag
+            übertragen und angewandt werden. </p>
+          <p>
+            Mein Behandlungsspektrum umfasst verschiedenste Problembereiche, insbesondere:</p>
+        </div>
+        <div class="vw-50 mx-auto mt-2">
+          <ul class="mx-auto">
+            <li>Depressionen</li>
+            <li>Burnout / Stressbewältigung</li>
+            <li>Angststörungen (wie z.B. Panikattacken, soziale Ängste, spezifische Phobien einschließlich Prüfungsangst
+              und Prokrastination)</li>
+            <li>Zwangsstörungen (Zwangsgedanken und Zwangshandlungen)</li>
+            <li>Krankheitsängste</li>
+            <li>Psychosomatische Erkrankungen (z.B. körperliche Beschwerden, für die keine körperliche Ursache erkennbar
+              ist)</li>
+            <li>Schmerzen</li>
+            <li>Schlafstörungen</li>
+            <li>Hilfe beim Umgang mit Veränderungen und belastenden Lebensereignissen, Krisen, Verlusten
+              („Anpassungsstörungen“)</li>
+            <li>Interaktionelle Schwierigkeiten </li>
+            <li>Psychosomatische Erkrankungen (z.B. körperliche Beschwerden, für die keine körperliche Ursache erkennbar
+              ist)</li>
+          </ul>
+        </div>
+        <h4 class="mt-2 mb-2">Beratung</h4>
+        <div class="vw-60 mx-auto">
+          <p>Manchmal kann psychotherapeutische Unterstützung auch hilfreich sein, wenn keine klinische Diagnose
+            vorliegt.
+            In meiner Praxis biete ich auch verhaltenstherapeutisch orientierte Beratung an.</p>
+          <p>Bei Interesse vereinbaren Sie gerne einen Termin für ein persönliches Erstgespräch, in dem wir gemeinsam
+            Ihr
+            Anliegen und damit verbundene Veränderungswünsche erfassen und den Umfang der Beratung bestimmen können.</p>
+        </div>
+
+      </article>
+    </section>
+
+    <section id="section-kid" class="section-color-1">
+      <div class="termin-cards flex-row mt-4">
+        <figure class="termin-card flxc-lg-3 flxc-md-2 flxc-sm-2 flxc-xs-1">
+          <img src="images/chair.jpg" alt="Chair" />
+          <div class="termin-card-detail mt-4 mb-2">
+            <h3>Psychotherapie</h3>
+            <p class="mt-2">Sitzung a 50 Min</p>
+            <div class="termin-action mt-5 ">
+              <a href="#" class="btn btn--big d-block mx-auto ">Termin vereinbaren</a>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="termin-card flxc-lg-3 flxc-md-2 flxc-sm-2 flxc-xs-1">
+          <img src="images/chair.jpg" alt="Chair" />
+          <div class="termin-card-detail mt-4 mb-2">
+            <h3>Beratung</h3>
+            <p class="mt-2">Einzelberatung a 50 Minuten</p>
+            <div class="termin-action mt-5">
+              <a href="#" class="btn btn--big d-block mx-auto ">Termin vereinbaren</a>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="termin-card flxc-lg-3 flxc-md-2 flxc-sm-2 flxc-xs-1">
+          <img src="images/chair.jpg" alt="Chair" />
+          <div class="termin-card-detail mt-4 mb-2">
+            <h3>Gruppentherapie</h3>
+            <p class="mt-2">aktuell in Planung</p>
+            <div class="termin-action mt-5">
+              <a href="#" class="btn btn--big d-block mx-auto ">Termin vereinbaren</a>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="section-about" class="full-screen section-color-3">
+      <article>
+        <h2>Tsubas Osara</h2>
+        <p>There’s a fine line between hyphenated words.</p>
+        <p>I used to be in a band called ‘Missing Cat’… you probably saw our posters.</p>
+        <p>Have you ever imagined a world with no hypothetical situations?</p>
+        <p>I was going to join the debating team, but somebody talked me out of it.</p>
+      </article>
+    </section>
+    <section id="section-contact" class="full-screen section-color-1">
+      <article>
+        <h2>Tsubas Osara</h2>
+        <p>There’s a fine line between hyphenated words.</p>
+        <p>I used to be in a band called ‘Missing Cat’… you probably saw our posters.</p>
+        <p>Have you ever imagined a world with no hypothetical situations?</p>
+        <p>I was going to join the debating team, but somebody talked me out of it.</p>
+      </article>
+    </section>
   </div>
-
-  <!--<section id="section-therapy" class="full-screen">
-    <article>
-      <h2>Bill Hicks</h2>
-      <p>I need my sleep. I need about eight hours a day, and about ten at night.</p>
-      <p>I don't mean to sound bitter, cold, or cruel, but I am, so that's how it comes out.</p>
-      <p>I never got along with my dad. Kids used to come up to me and say, "My dad can beat up your dad." I'd say
-        "Yeah? When?"</p>
-    </article>
-  </section> -->
-  <section id="section-consult" class="full-screen section-color-3">
-    <article>
-
-      <h2 class="mt-3">Psychotherapie und Beratung</h2>
-      <h4 class="mt-2 mb-2">Psychotherapie</h4>
-
-      <div class="w-80 mx-auto">
-        <p>Als approbierte Psychologische Psychotherapeutin mit dem Schwerpunkt Verhaltenstherapie orientiert sich meine
-          Behandlung an den neuesten wissenschaftlichen Standards.</p>
-        <p>Die Verhaltenstherapie ist ein wissenschaftlich fundierter, evidenzbasierter therapeutischer Ansatz, dessen
-          Wirksamkeit in zahlreichen Studien nachgewiesen wurde.
-
-          Sie geht davon aus, dass Gedanken, Gefühle und Verhaltensweisen im engen Zusammenhang stehen und durch frühere
-          Erfahrungen erlernt werden, womit sie einen entscheidenden Einfluss auf unsere Lebensgestaltung haben. Unter
-          bestimmten Bedingungen können diese erlernten Erlebens- und Verhaltensmuster jedoch zu Störungen und Problemen
-          beitragen. </p>
-        <p>Im Mittelpunkt der Behandlung steht die Veränderung von ungünstig erworbenen Denkmustern und
-          Verhaltensweisen.Dabei sollen die in den Sitzungen gewonnenen Erkenntnisse und Einsichten in den Alltag
-          übertragen und angewandt werden. </p>
-        <p>
-          Mein Behandlungsspektrum umfasst verschiedenste Problembereiche, insbesondere:</p>
-      </div>
-      <div class="vw-50 mx-auto mt-2">
-        <ul class="mx-auto">
-          <li>Depressionen</li>
-          <li>Burnout / Stressbewältigung</li>
-          <li>Angststörungen (wie z.B. Panikattacken, soziale Ängste, spezifische Phobien einschließlich Prüfungsangst
-            und Prokrastination)</li>
-          <li>Zwangsstörungen (Zwangsgedanken und Zwangshandlungen)</li>
-          <li>Krankheitsängste</li>
-          <li>Psychosomatische Erkrankungen (z.B. körperliche Beschwerden, für die keine körperliche Ursache erkennbar
-            ist)</li>
-          <li>Schmerzen</li>
-          <li>Schlafstörungen</li>
-          <li>Hilfe beim Umgang mit Veränderungen und belastenden Lebensereignissen, Krisen, Verlusten
-            („Anpassungsstörungen“)</li>
-          <li>Interaktionelle Schwierigkeiten </li>
-          <li>Psychosomatische Erkrankungen (z.B. körperliche Beschwerden, für die keine körperliche Ursache erkennbar
-            ist)</li>
-        </ul>
-      </div>
-      <h4 class="mt-2 mb-2">Beratung</h4>
-      <div class="vw-60 mx-auto">
-        <p>Manchmal kann psychotherapeutische Unterstützung auch hilfreich sein, wenn keine klinische Diagnose vorliegt.
-          In meiner Praxis biete ich auch verhaltenstherapeutisch orientierte Beratung an.</p>
-        <p>Bei Interesse vereinbaren Sie gerne einen Termin für ein persönliches Erstgespräch, in dem wir gemeinsam Ihr
-          Anliegen und damit verbundene Veränderungswünsche erfassen und den Umfang der Beratung bestimmen können.</p>
-      </div>
-
-    </article>
-  </section>
-
-  <section class="section-color-1">
-    <div class="termin-cards flex-row mt-4">
-      <figure class="termin-card flxc-lg-3 flxc-md-2 flxc-sm-2 flxc-xs-1">
-        <img src="images/chair.jpg" alt="Chair" />
-        <div class="termin-card-detail mt-4 mb-2">
-          <h3>Psychotherapie</h3>
-          <p class="mt-2">Sitzung a 50 Min</p>
-          <div class="termin-action mt-5 ">
-            <a href="#" class="btn btn--big d-block mx-auto ">Termin vereinbaren</a>
-          </div>
-        </div>
-      </figure>
-
-      <figure class="termin-card flxc-lg-3 flxc-md-2 flxc-sm-2 flxc-xs-1">
-        <img src="images/chair.jpg" alt="Chair" />
-        <div class="termin-card-detail mt-4 mb-2">
-          <h3>Beratung</h3>
-          <p class="mt-2">Einzelberatung a 50 Minuten</p>
-          <div class="termin-action mt-5">
-            <a href="#" class="btn btn--big d-block mx-auto ">Termin vereinbaren</a>
-          </div>
-        </div>
-      </figure>
-
-      <figure class="termin-card flxc-lg-3 flxc-md-2 flxc-sm-2 flxc-xs-1">
-        <img src="images/chair.jpg" alt="Chair" />
-        <div class="termin-card-detail mt-4 mb-2">
-          <h3>Gruppentherapie</h3>
-          <p class="mt-2">aktuell in Planung</p>
-          <div class="termin-action mt-5">
-            <a href="#" class="btn btn--big d-block mx-auto ">Termin vereinbaren</a>
-          </div>
-        </div>
-      </figure>
-    </div>
-  </section>
-
-
-  <section id="section-about" class="full-screen section-color-2">
-    <article>
-      <h2>Tsubas Osara</h2>
-      <p>There’s a fine line between hyphenated words.</p>
-      <p>I used to be in a band called ‘Missing Cat’… you probably saw our posters.</p>
-      <p>Have you ever imagined a world with no hypothetical situations?</p>
-      <p>I was going to join the debating team, but somebody talked me out of it.</p>
-    </article>
-  </section>
-  <section id="section-contact" class="full-screen section-color-1">
-    <article>
-      <h2>Tsubas Osara</h2>
-      <p>There’s a fine line between hyphenated words.</p>
-      <p>I used to be in a band called ‘Missing Cat’… you probably saw our posters.</p>
-      <p>Have you ever imagined a world with no hypothetical situations?</p>
-      <p>I was going to join the debating team, but somebody talked me out of it.</p>
-    </article>
-  </section>
-
 </body>
 
 </html>
