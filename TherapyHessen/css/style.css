@@ -57,7 +57,7 @@ p {
 }
 
 nav {
-  background-color: #9bb86d;
+  background-color: #5d84a7;
   padding: 10px;
   text-align: center;
   width: 100%;
@@ -73,10 +73,6 @@ nav a {
   font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
 .site-language {
   display: inline;
   width: 20%;
@@ -86,9 +82,10 @@ nav a:hover {
 .language-icon {
   width: 3rem;
   height: 3rem;
+  opacity: 0.5;
 }
 
-section {
+.language-icon section {
   min-height: 100vh;
   max-width: 90vw;
   margin: 0px auto;

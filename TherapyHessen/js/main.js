@@ -15,6 +15,9 @@ function changeLanguage(langKey) {
   });
 
   updateTranslations();
+
+  $(".site-language img").css("opacity", "0.5");
+  $(`.icon-${langKey} img`).css("opacity", "1");
 }
 
 function setLanguage(lang) {
