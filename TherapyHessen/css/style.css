@@ -102,6 +102,10 @@ nav a {
   background-size: cover;
 }
 
+section {
+  padding-top: 3rem;
+}
+
 section#header {
   /* background-color: #f1f9f8; */
   min-height: 8vh;
@@ -114,12 +118,6 @@ section#section-header2 {
 
 section#section-intro {
   background-color: rgba(191, 213, 226, 0.7);
-}
-
-section#section-therapy {
-}
-
-section#section-consult {
 }
 
 section#section-consult p {
@@ -210,11 +208,7 @@ figcaption {
   border-radius: 1.2rem;
   background-color: aliceblue;
 }
-
-.termin-cards {
-}
-
-.termin-card img {
++ .termin-card img {
   width: 100%;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;

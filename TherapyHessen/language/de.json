@@ -1,10 +1,12 @@
 {
   "date": "Datum",
-  "data1": "Start",
-  "data2": "Psychotherapie",
-  "data3": "Psychologische Beratung",
-  "data4": "Über mich",
-  "data5": "Kontakt",
+  "dataMainNav1": "Über uns",
+  "dataMainNav2": "Beratung für Kinder und Jugendliche",
+  "dataMainNav3": "Beratung für Erwachsene",
+  "dataMainNav4": "Beratung für Familien",
+  "dataMainNav5": "Spieltherapie",
+  "dataMainNav6": "Kontakt",
   "data6": "Klinischer Psychologe",
-  "data7": "Psychologische Beratung für Erwachsene, Familien, Kinder und Jugendliche"
+  "data7": "Psychologische Beratung für Erwachsene, Familien, Kinder und Jugendliche",
+  "data8": "Willkommen in meiner Privatpraxis für Psychotherapie und Beratung"
 }

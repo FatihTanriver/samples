@@ -3,7 +3,7 @@
 }
 
 .section-color-2 {
-  background-color: whiet; /* #b2abbf; */
+  background-color: #b2abbf; /* #b2abbf; */
 }
 
 .section-color-3 {
@@ -235,4 +235,8 @@ my-2 {
 }
 .vh-50 {
   width: 50vh;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
 }

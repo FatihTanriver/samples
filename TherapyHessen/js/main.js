@@ -34,4 +34,5 @@ function updateTranslations() {
   $("[data-lang=data5]").text(language.data5);
   $("[data-lang=data6]").text(language.data6);
   $("[data-lang=data7]").text(language.data7);
+  $("[data-lang=data8]").text(language.data8);
 }
