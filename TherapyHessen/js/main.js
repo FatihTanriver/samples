@@ -27,12 +27,15 @@ function setLanguage(lang) {
 function updateTranslations() {
   //language = localStorage.getItem("language");
   var newVal = language.date;
-  $("[data-lang=data1]").text(language.data1);
-  $("[data-lang=data2]").text(language.data2);
-  $("[data-lang=data3]").text(language.data3);
-  $("[data-lang=data4]").text(language.data4);
-  $("[data-lang=data5]").text(language.data5);
+  $("[data-lang=dataMainNav1]").text(language.dataMainNav1);
+  $("[data-lang=dataMainNav2]").text(language.dataMainNav2);
+  $("[data-lang=dataMainNav3]").text(language.dataMainNav3);
+  $("[data-lang=dataMainNav4]").text(language.dataMainNav4);
+  $("[data-lang=dataMainNav5]").text(language.dataMainNav5);
+  $("[data-lang=dataMainNav6]").text(language.dataMainNav6);
+
   $("[data-lang=data6]").text(language.data6);
   $("[data-lang=data7]").text(language.data7);
   $("[data-lang=data8]").text(language.data8);
+  $("[data-lang=dataContactTitle]").text(language.dataContactTitle);
 }
