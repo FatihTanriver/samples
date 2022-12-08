@@ -208,7 +208,7 @@ figcaption {
   border-radius: 1.2rem;
   background-color: aliceblue;
 }
-+ .termin-card img {
+.termin-card img {
   width: 100%;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -229,6 +229,11 @@ figcaption {
 }
 .feature-box p {
   font-size: 1.5rem;
+}
+
+#contact-map {
+  width: 90%;
+  height: 40rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {

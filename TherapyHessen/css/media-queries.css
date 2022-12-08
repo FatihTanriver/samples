@@ -28,6 +28,14 @@
     font-size: 50%;
   }
 
+  nav a:first-child {
+    margin-left: 0px;
+  }
+
+  nav a {
+    margin: 0px 15px;
+  }
+
   .flxc-md-4 {
     flex: 0 0 calc(25% - 5rem); /* flex-grow: , flex-shrink:   , flex-basis: */
     margin: 1rem;
