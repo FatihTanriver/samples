@@ -5,6 +5,9 @@
 /**************************/
 
 @media (max-width: 84em) {
+  #layout-container {
+    width: 100vw;
+  }
 }
 
 /**************************/
@@ -99,10 +102,6 @@
 
   section {
     max-width: 100%;
-  }
-
-  #layout-container {
-    width: 100%;
   }
 
   #main-nav {
