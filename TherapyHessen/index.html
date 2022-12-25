@@ -30,11 +30,16 @@
         toggleMobileMenu();
       });
 
+      $(".mobile-nav-links a").click(function () {
+        toggleMobileMenu();
+      });
+
     });
 
 
     function toggleMobileMenu() {
       $(".nav-links").toggleClass("d-xs-none");
+      $(".nav-links").toggleClass("mobile-nav-links")
     }
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
