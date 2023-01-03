@@ -2,7 +2,7 @@ function changeLanguage(langKey) {
   //localStorage.getItem("language") == null ? setLanguage(langKey) : false;
   setLanguage(langKey);
   language = localStorage.getItem("language");
-  var basePathName = window.location.pathname + "language/";
+  var basePathName = window.location.origin + "/language/";
 
   $.ajax({
     url: basePathName + localStorage.getItem("language") + ".json",

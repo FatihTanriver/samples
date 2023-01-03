@@ -410,14 +410,84 @@ ul.social-icons {
 }
 .card__picture--1 {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730),
-    url(../images/sample-image/childWithCars.jpg);
+    url(../images/sample-image/adultTherapy1.jpg);
   background: radial-gradient(ellipse at bottom left, 20%, transparent 20%);
 }
 .card__picture--2 {
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
-    url(../images/sample-image/childWithPlane.jpg);
+    url(../images/sample-image/adultTherapy2.jpg);
 }
 .card__picture--3 {
   background-image: linear-gradient(to right bottom, #2998ff, #5643fa),
-    url(../images/sample-image/childWithTeddyBear.jpg);
+    url(../images/sample-image/adultTherapy3.jpg);
+}
+
+/*
+ cards
+*/
+.cards {
+  /*padding: 3rem;*/
+}
+
+.card1s {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12rem;
+}
+
+.card1 {
+  width: 80rem;
+  height: 25rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  background-color: beige;
+  align-self: flex-start;
+}
+
+.card1:nth-child(even) {
+  align-self: flex-end;
+}
+
+.card1 img {
+  border-radius: 0;
+  transform: scale(1.15);
+  /*scale images proportionally*/
+  /*box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);*/
+
+  width: auto;
+  height: 100%;
+}
+
+/*flex-row second element*/
+.card1 .img-container {
+  display: inline-block;
+  flex: 0 1 20rem;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 20rem;
+  height: 100%;
+}
+
+.img-container:nth-child(even) {
+  order: 2;
+}
+
+/*flex-row second element*/
+.card1 .card-info {
+  display: inline-block;
+  /*flex: 3 1 auto;*/
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.option-A .card1,
+.option-A .card1 img {
+  height: 20rem;
 }
