@@ -38,6 +38,9 @@ function updateTranslations() {
   $("[data-lang=job_short_description]").text(language.job_short_description);
   $("[data-lang=welcome_title]").text(language.welcome_title);
   $("[data-lang=contact_section_title]").text(language.contact_section_title);
+  $("[data-lang=child_section_sub_title]").text(
+    language.child_section_sub_title
+  );
   $("[data-lang=child_list_item_1]").text(language.child_list_item_1);
   $("[data-lang=child_list_item_2]").text(language.child_list_item_2);
   $("[data-lang=child_list_item_3]").text(language.child_list_item_3);
@@ -53,6 +56,10 @@ function updateTranslations() {
   $("[data-lang=child_list_item_13]").text(language.child_list_item_13);
   $("[data-lang=child_list_item_14]").text(language.child_list_item_14);
   $("[data-lang=child_list_item_15]").text(language.child_list_item_15);
+  $("[data-lang=child_drawing_info_1]").text(language.child_drawing_info_1);
+  $("[data-lang=teenager_section_sub_title]").text(
+    language.teenager_section_sub_title
+  );
   $("[data-lang=teenager_list_item_1]").text(language.teenager_list_item_1);
   $("[data-lang=teenager_list_item_2]").text(language.teenager_list_item_2);
   $("[data-lang=teenager_list_item_3]").text(language.teenager_list_item_3);
@@ -80,4 +87,5 @@ function updateTranslations() {
   $("[data-lang=family_list_item_1]").text(language.family_list_item_1);
   $("[data-lang=family_list_item_2]").text(language.family_list_item_2);
   $("[data-lang=family_list_item_3]").text(language.family_list_item_3);
+  $("[data-lang=game_therapy_info_1]").text(language.game_therapy_info_1);
 }

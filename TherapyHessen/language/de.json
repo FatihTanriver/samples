@@ -10,6 +10,7 @@
   "job_short_description": "Psychologische Beratung für Erwachsene, Familien, Kinder und Jugendliche",
   "welcome_title": "Willkommen in meiner Privatpraxis für Psychotherapie und Beratung",
   "contact_section_title": "Wenn Sie uns kontaktieren wollen!",
+  "child_section_sub_title": "Kindertherapy",
   "child_list_item_1": "Schlafprobleme",
   "child_list_item_2": "Probleme beim Essen",
   "child_list_item_3": "Entwicklungspolitische Probleme",
@@ -25,6 +26,8 @@
   "child_list_item_13": "Trauma, Verlust, Trauerprozess",
   "child_list_item_14": "Depressionen und Angstzustände in der Kindheit",
   "child_list_item_15": "Probleme im Zusammenhang mit Ehe und Scheidung",
+  "child_drawing_info_1": "Es ist notwendig, mit Kindern im Alter von 3-11 Jahren zu kommunizieren, indem man Methoden verwendet, mit denen sie sich besser ausdrücken können.In dieser Zeit ist die Analyse der inneren Welt des Kindes anhand der Zeichnungen leicht möglich. Anhand dieser Zeichnungen lassen sich die Bedürfnisse des Kindes ermitteln.",
+  "teenager_section_sub_title": "Jugendliche Therapy",
   "teenager_list_item_1": "Beziehungsprobleme in der Familie",
   "teenager_list_item_2": "Anpassungsprobleme",
   "teenager_list_item_3": "Probleme mit Freundschaftsbeziehungen",
@@ -51,5 +54,6 @@
   "adult_list_item_14": "Emotionale und affektive Probleme, Unglücklichsein",
   "family_list_item_1": "Beziehungs- und Kommunikationsprobleme in der Familie",
   "family_list_item_2": "Probleme in sozialen Beziehungen",
-  "family_list_item_3": "Probleme im Zusammenhang mit Verlobung, Heirat und Scheidung"
+  "family_list_item_3": "Probleme im Zusammenhang mit Verlobung, Heirat und Scheidung",
+  "game_therapy_info_1": "Spiel; ist ein Bereich, in dem das Kind sich selbst ausdrückt, eine Brücke zwischen Phantasie und Realität, die Nutzung verborgener Energien, und in dem das Kind soziale und moralische Werte erlernt."
 }

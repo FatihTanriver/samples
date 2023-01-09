@@ -19,6 +19,10 @@
     /* 9px / 16px  */
     font-size: 56.25%;
   }
+
+  .cardA {
+    min-width: 45rem;
+  }
 }
 
 /**************************/
@@ -31,8 +35,8 @@
     font-size: 50%;
   }
 
-  .card {
-    width: 50%;
+  .cardA {
+    min-width: 45rem;
   }
 
   nav a:first-child {
@@ -74,7 +78,7 @@
     margin: 1rem;
   }
 
-  .card {
+  .cardA {
     width: 100%;
     margin: 2rem;
   }

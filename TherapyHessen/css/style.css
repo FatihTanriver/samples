@@ -370,22 +370,24 @@ ul.social-icons {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 }
 
-.card {
+/**/
+
+.cardA {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 52rem;
-  width: 30%;
+  height: 50rem;
+  width: 45rem;
   display: inline-block;
 }
 
-.card__details {
+.cardA_details {
   text-align: center;
   padding-top: 3rem;
 }
 
-.card__side {
-  height: 52rem;
+.cardA_side {
+  height: 50rem;
   transition: all 0.8s ease;
   position: absolute;
   top: 0;
@@ -395,31 +397,64 @@ ul.social-icons {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-}
-
-.card__side--front {
   background-color: #fff;
 }
 
-.card__picture {
+.cardA_image {
   background-size: cover;
   height: 30rem;
   background-blend-mode: screen;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
-.card__picture--1 {
+
+.cardA_child-image-1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730),
+    url(../images/sample-image/childWithCars-3x2.jpg);
+  background: radial-gradient(ellipse at bottom left, 20%, transparent 20%);
+}
+
+.cardA_child-image-2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
+    url(../images/sample-image/childWithDrawing-3x2.jpg);
+  background: radial-gradient(ellipse at bottom left, 20%, transparent 20%);
+}
+
+.cardA_child-image-3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa),
+    url(../images/sample-image/childWithTeddyBear-3x2.jpg);
+}
+
+.cardA_teenager-image-1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730),
+    url(../images/sample-image/youngs1.jpg);
+  background: radial-gradient(ellipse at bottom left, 20%, transparent 20%);
+}
+
+.cardA_teenager-image-2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
+    url(../images/sample-image/youngSad1.jpg);
+  background: radial-gradient(ellipse at bottom left, 20%, transparent 20%);
+}
+
+.cardA_adult-image-1 {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730),
     url(../images/sample-image/adultTherapy1.jpg);
   background: radial-gradient(ellipse at bottom left, 20%, transparent 20%);
 }
-.card__picture--2 {
+.cardA_adult-image-2 {
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
     url(../images/sample-image/adultTherapy2.jpg);
 }
-.card__picture--3 {
+.cardA_adult-image-3 {
   background-image: linear-gradient(to right bottom, #2998ff, #5643fa),
     url(../images/sample-image/adultTherapy3.jpg);
+}
+
+.cardA_family-image-1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730),
+    url(../images/sample-image/family1.jpg);
+  background: radial-gradient(ellipse at bottom left, 20%, transparent 20%);
 }
 
 /*
