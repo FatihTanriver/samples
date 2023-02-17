@@ -14,32 +14,6 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
-  text-align: center;
-  font-size: 3rem;
-}
-
-h2 {
-  text-align: center;
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-size: 2rem;
-  text-align: center;
-}
-
-h4 {
-  font-size: 2rem;
-  text-align: center;
-}
-
-p {
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
-  line-height: 3rem;
-}
-
 #main-nav {
   display: flex;
   width: 100%;
@@ -134,12 +108,6 @@ article {
   margin: 0px auto;
 }
 
-p {
-  font-size: 1.8em;
-  text-align: center;
-  line-height: 2rem;
-}
-
 li {
   font-size: 1.5em;
   text-align: left;
@@ -150,13 +118,6 @@ li {
 li:last-child {
   margin-bottom: 0;
 }
-
-/*.intro-container {
-   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 4rem;
-  padding: 2rem;
-}*/
 
 .header-text-box {
   align-self: center;
@@ -240,49 +201,25 @@ figcaption {
   font-size: 1.5rem;
 }
 
-#contact-map {
-  width: 90%;
-  height: 40rem;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  body {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  body {
-    font-size: 11px;
-  }
-}
-
-.footer-social-icons {
-  width: 800px;
-  display: block;
-  margin: 0 auto;
-}
+/*Start Social Media Icons*/
 .social-icon {
   color: #fff;
 }
 ul.social-icons {
   margin-top: 10px;
 }
+
 .social-icons li {
   vertical-align: top;
   display: inline;
   height: 100px;
 }
+
 .social-icons a {
   color: #fff;
   text-decoration: none;
 }
+
 .fa-facebook {
   padding: 10px 14px;
   -o-transition: 0.5s;
@@ -292,9 +229,11 @@ ul.social-icons {
   transition: 0.5s;
   background-color: #322f30;
 }
+
 .fa-facebook:hover {
   background-color: #3d5b99;
 }
+
 .fa-twitter {
   padding: 10px 12px;
   -o-transition: 0.5s;
@@ -304,9 +243,11 @@ ul.social-icons {
   transition: 0.5s;
   background-color: #322f30;
 }
+
 .fa-twitter:hover {
   background-color: #00aced;
 }
+
 .fa-rss {
   padding: 10px 14px;
   -o-transition: 0.5s;
@@ -316,9 +257,11 @@ ul.social-icons {
   transition: 0.5s;
   background-color: #322f30;
 }
+
 .fa-rss:hover {
   background-color: #eb8231;
 }
+
 .fa-youtube {
   padding: 10px 14px;
   -o-transition: 0.5s;
@@ -328,6 +271,7 @@ ul.social-icons {
   transition: 0.5s;
   background-color: #322f30;
 }
+
 .fa-youtube:hover {
   background-color: #e64a41;
 }
@@ -341,6 +285,7 @@ ul.social-icons {
   transition: 0.5s;
   background-color: #322f30;
 }
+
 .fa-instagram:hover {
   background: #f09433;
   background: -moz-linear-gradient(
@@ -370,7 +315,16 @@ ul.social-icons {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 }
 
-/**/
+/*End Social Media Icons*/
+
+/*Start Google Maps*/
+
+#contact-map {
+  width: 90%;
+  height: 40rem;
+}
+
+/*End Google Maps*/
 
 .cardA {
   perspective: 150rem;
