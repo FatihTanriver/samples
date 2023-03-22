@@ -88,4 +88,5 @@ function updateTranslations() {
   $("[data-lang=family_list_item_2]").text(language.family_list_item_2);
   $("[data-lang=family_list_item_3]").text(language.family_list_item_3);
   $("[data-lang=game_therapy_info_1]").text(language.game_therapy_info_1);
+  $("[data-lang=home_greeting_text]").text(language.home_greeting_text);
 }
