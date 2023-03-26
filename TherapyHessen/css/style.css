@@ -363,7 +363,7 @@ ul.social-icons {
 }
 
 .cardA_child-image-1 {
-  background-image: linear-gradient(to right bottom, #ffb900, #ff7730),
+  background-image: linear-gradient(to right bottom, #ffbb00, #ff7730),
     url(../images/sample-image/childWithCars-3x2.jpg);
   background: radial-gradient(ellipse at bottom left, 20%, transparent 20%);
 }
@@ -396,6 +396,7 @@ ul.social-icons {
     url(../images/sample-image/adultTherapy1.jpg);
   background: radial-gradient(ellipse at bottom left, 20%, transparent 20%);
 }
+
 .cardA_adult-image-2 {
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
     url(../images/sample-image/adultTherapy2.jpg);
@@ -415,7 +416,7 @@ ul.social-icons {
  cards
 */
 .cards {
-  /*padding: 3rem;*/
+  font-size: 1.5rem;
 }
 
 .card1s {
