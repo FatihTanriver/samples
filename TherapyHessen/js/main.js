@@ -10,7 +10,11 @@ function changeLanguage(langKey) {
     type: "HEAD",
     error: function () {
       console.log("The file does not exist.");
-      jsonUrl = "/language/" + localStorage.getItem("language") + ".json";
+      jsonUrl =
+        window.location.origin +
+        window.location.pathname +
+        localStorage.getItem("language") +
+        ".json";
     },
     success: function () {
       console.log("The file exists.");
