@@ -143,6 +143,7 @@
   .cardA {
     width: 100%;
     margin: 2rem;
+    min-width: 42rem;
   }
 
   .flxc-sm-3 {
@@ -168,6 +169,7 @@
 @media (max-width: 34em) {
   p {
     font-size: 1.5rem;
+    line-height: 3.2rem;
   }
 
   li {
@@ -225,7 +227,7 @@
   .menu-icon-container {
     /*display: inline-block;*/
     float: left;
-    background-color: #edd6d0;
+    background-color: #d9ead3;
   }
 
   .site-language {
