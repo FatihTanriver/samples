@@ -3,9 +3,22 @@ function changeLanguage(langKey) {
   setLanguage(langKey);
   language = localStorage.getItem("language");
   var basePathName = window.location.origin + "/language/";
+  var jsonUrl = basePathName + localStorage.getItem("language") + ".json";
 
   $.ajax({
-    url: basePathName + localStorage.getItem("language") + ".json",
+    url: jsonUrl,
+    type: "HEAD",
+    error: function () {
+      console.log("The file does not exist.");
+      jsonUrl = "/language/" + localStorage.getItem("language") + ".json";
+    },
+    success: function () {
+      console.log("The file exists.");
+    },
+  });
+
+  $.ajax({
+    url: jsonUrl,
     dataType: "json",
     async: false,
     dataType: "json",
