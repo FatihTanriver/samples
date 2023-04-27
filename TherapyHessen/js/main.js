@@ -2,9 +2,23 @@ function changeLanguage(langKey) {
   //localStorage.getItem("language") == null ? setLanguage(langKey) : false;
   setLanguage(langKey);
   language = localStorage.getItem("language");
-  var basePathName =
-    window.location.origin + window.location.pathname + "language/";
-  var jsonUrl = basePathName + localStorage.getItem("language") + ".json";
+  var jsonUrl = "";
+
+  if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+    //'http://localhost:5500/language/de.json'
+    jsonUrl =
+      window.location.origin +
+      "/language/" +
+      localStorage.getItem("language") +
+      ".json";
+  } else {
+    jsonUrl =
+      window.location.origin +
+      window.location.pathname +
+      "language/" +
+      localStorage.getItem("language") +
+      ".json";
+  }
 
   $.ajax({
     url: jsonUrl,
@@ -14,6 +28,7 @@ function changeLanguage(langKey) {
       jsonUrl =
         window.location.origin +
         window.location.pathname +
+        "language/" +
         localStorage.getItem("language") +
         ".json";
     },
