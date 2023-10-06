@@ -1,0 +1,502 @@
+[
+  {
+    "video_path": "videos/Project1.mp4",
+    "video_title": "Expanding Cards",
+    "zoom_active": false,
+    "tags": "Carousel, Animation",
+    "description": "Example Description 1",
+    "zoom_level": 1,
+    "video_speed": 10,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project2.mp4",
+    "video_title": "Progress Steps",
+    "zoom_active": true,
+    "tags": "Component, Animation",
+    "description": "Example Description 2",
+    "zoom_level": 2,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project3.mp4",
+    "video_title": "Rotating Navigation",
+    "zoom_active": false,
+    "tags": "Navbar, Animation",
+    "description": "Example Description 3",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project4.mp4",
+    "video_title": "Hidden Search Widget",
+    "zoom_active": true,
+    "tags": "Widget, Search Widget, Animation",
+    "description": "Example Description 4",
+    "zoom_level": 2,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project5.mp4",
+    "video_title": "Blurry Loading",
+    "zoom_active": false,
+    "tags": "Loading, Animation",
+    "description": "Example Description 5",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project6.mp4",
+    "video_title": "Scroll Animation",
+    "zoom_active": true,
+    "tags": "Scroll Effect, Animation",
+    "description": "Example Description 6",
+    "zoom_level": 1,
+    "video_speed": 1,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project7.mp4",
+    "video_title": "Split Landing Page",
+    "zoom_active": true,
+    "tags": "Animation",
+    "description": "Example Description 7",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project8.mp4",
+    "video_title": "Form Wave Animation",
+    "zoom_active": true,
+    "tags": "Form, Animation",
+    "description": "Example Description 8",
+    "zoom_level": 1.5,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project9.mp4",
+    "video_title": "Sound Board",
+    "zoom_active": true,
+    "tags": "Audio",
+    "description": "Example Description 9",
+    "zoom_level": 1.3,
+    "video_speed": 2,
+    "is_muted": false
+  },
+  {
+    "video_path": "videos/Project10.mp4",
+    "video_title": "Dad Jokes",
+    "zoom_active": true,
+    "tags": "API",
+    "description": "Example Description 10",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project11.mp4",
+    "video_title": "Event KeyCodes",
+    "zoom_active": true,
+    "tags": "Key Event",
+    "description": "Example Description 11",
+    "zoom_level": 2,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project12.mp4",
+    "video_title": "FAQ Collapse",
+    "zoom_active": true,
+    "tags": "Component",
+    "description": "Example Description 12",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project13.mp4",
+    "video_title": "Random Choice Picker",
+    "zoom_active": true,
+    "tags": "",
+    "description": "Example Description 13",
+    "zoom_level": 2,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project14.mp4",
+    "video_title": "Animated Navigation",
+    "zoom_active": true,
+    "tags": "Navigation, Animation",
+    "description": "Example Description 14",
+    "zoom_level": 2,
+    "video_speed": 1.2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project15.mp4",
+    "video_title": "Incrementing Counter",
+    "zoom_active": true,
+    "tags": "Counter, Animation",
+    "description": "Example Description 15",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project16.mp4",
+    "video_title": "Drink Water",
+    "zoom_active": true,
+    "tags": "Animation",
+    "description": "Example Description 16",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project17.mp4",
+    "video_title": "Movie App",
+    "zoom_active": true,
+    "tags": "API",
+    "description": "Example Description 17",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project18.mp4",
+    "video_title": "Background Slider",
+    "zoom_active": true,
+    "tags": "Carousel, Background Animation",
+    "description": "Example Description 18",
+    "zoom_level": 1,
+    "video_speed": 1.5,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project19.mp4",
+    "video_title": "Theme Clock",
+    "zoom_active": true,
+    "tags": "Animation",
+    "description": "Example Description 19",
+    "zoom_level": 1.6,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project20.mp4",
+    "video_title": "Button Ripple Effect",
+    "zoom_active": true,
+    "tags": "Button Component, Animation",
+    "description": "Example Description 20",
+    "zoom_level": 2,
+    "video_speed": 1.2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project21.mp4",
+    "video_title": "Drag N Drop",
+    "zoom_active": true,
+    "tags": "Drag-Drop, Animation",
+    "description": "Example Description 21",
+    "zoom_level": 1,
+    "video_speed": 1.5,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project22.mp4",
+    "video_title": "Drawing App",
+    "zoom_active": true,
+    "tags": "App",
+    "description": "Example Description 22",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project23.mp4",
+    "video_title": "Kinetic CSS Loader",
+    "zoom_active": true,
+    "tags": "Loader, Animation",
+    "description": "Example Description 23",
+    "zoom_level": 1,
+    "video_speed": 1.5,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project24.mp4",
+    "video_title": "Content Placeholder",
+    "zoom_active": true,
+    "tags": "Loader, Animation",
+    "description": "Example Description 24",
+    "zoom_level": 2,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project25.mp4",
+    "video_title": "Sticky Navbar",
+    "zoom_active": true,
+    "tags": "Navbar",
+    "description": "Example Description 25",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project26.mp4",
+    "video_title": "Double Vertical Slider",
+    "zoom_active": true,
+    "tags": "Carousel, Animation",
+    "description": "Example Description 26",
+    "zoom_level": 1,
+    "video_speed": 1.2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project27.mp4",
+    "video_title": "Toast Notifications",
+    "zoom_active": true,
+    "tags": "App",
+    "description": "Example Description 27",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project28.mp4",
+    "video_title": "Github Profiles",
+    "zoom_active": true,
+    "tags": "API, Search",
+    "description": "Example Description 28",
+    "zoom_level": 1.7,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project29.mp4",
+    "video_title": "Double Heart Click",
+    "zoom_active": true,
+    "tags": "Animation",
+    "description": "Example Description 29",
+    "zoom_level": 1.7,
+    "video_speed": 1.3,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project30.mp4",
+    "video_title": "Auto Text Effect",
+    "zoom_active": true,
+    "tags": "Text Animation, Animation",
+    "description": "Example Description 30",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project31.mp4",
+    "video_title": "Password Generator",
+    "zoom_active": true,
+    "tags": "App",
+    "description": "Example Description 31",
+    "zoom_level": 2,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project32.mp4",
+    "video_title": "Good, Cheap, Fast Checkboxes",
+    "zoom_active": true,
+    "tags": "Checkbox Component",
+    "description": "Example Description 32",
+    "zoom_level": 2,
+    "video_speed": 1.7,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project33.mp4",
+    "video_title": "Notes App",
+    "zoom_active": true,
+    "tags": "App, Markdown",
+    "description": "Example Description 33",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project34.mp4",
+    "video_title": "Animated Countdown",
+    "zoom_active": true,
+    "tags": "Animation",
+    "description": "Example Description 34",
+    "zoom_level": 3,
+    "video_speed": 1.2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project35.mp4",
+    "video_title": "Image Carousel",
+    "zoom_active": true,
+    "tags": "Carousel",
+    "description": "Example Description 35",
+    "zoom_level": 1.5,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project36.mp4",
+    "video_title": "Hoverboard",
+    "zoom_active": true,
+    "tags": "App, Mouse Animation",
+    "description": "Example Description 36",
+    "zoom_level": 1.2,
+    "video_speed": 1.4,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project37.mp4",
+    "video_title": "Pokedox",
+    "zoom_active": true,
+    "tags": "API",
+    "description": "Example Description 37",
+    "zoom_level": 1,
+    "video_speed": 1,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project38.mp4",
+    "video_title": "Mobile Tab Navigation",
+    "zoom_active": true,
+    "tags": "Navbar",
+    "description": "Example Description 38",
+    "zoom_level": 1.4,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project39.mp4",
+    "video_title": "Password Strength Background",
+    "zoom_active": true,
+    "tags": "Animation",
+    "description": "Example Description 39",
+    "zoom_level": 1.5,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project40.mp4",
+    "video_title": "3D Background Boxes",
+    "zoom_active": true,
+    "tags": "Animation, 3D Animation",
+    "description": "Example Description 40",
+    "zoom_level": 1.3,
+    "video_speed": 1.2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project41.mp4",
+    "video_title": "Verify Account UI",
+    "zoom_active": true,
+    "tags": "App, Component",
+    "description": "App",
+    "zoom_level": 1.5,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project42.mp4",
+    "video_title": "Live User Filter",
+    "zoom_active": true,
+    "tags": "Filter, Search",
+    "description": "Example Description 42",
+    "zoom_level": 1.9,
+    "video_speed": 1.5,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project43.mp4",
+    "video_title": "Feedback UI Design",
+    "zoom_active": true,
+    "tags": "Component",
+    "description": "Example Description 43",
+    "zoom_level": 2,
+    "video_speed": 1.5,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project44.mp4",
+    "video_title": "Custom Range Slider",
+    "zoom_active": true,
+    "tags": "Component",
+    "description": "Example Description 44",
+    "zoom_level": 2,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project45.mp4",
+    "video_title": "Netflix Mobile Navigation",
+    "zoom_active": true,
+    "tags": "Navbar, Animation",
+    "description": "Example Description 45",
+    "zoom_level": 1,
+    "video_speed": 1.5,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project46.mp4",
+    "video_title": "Quiz App",
+    "zoom_active": true,
+    "tags": "App, Component",
+    "description": "Example Description 46",
+    "zoom_level": 1.5,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project47.mp4",
+    "video_title": "Testimonial Box Switcher",
+    "zoom_active": true,
+    "tags": "Component, Animation",
+    "description": "Example Description 47",
+    "zoom_level": 1.7,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project48.mp4",
+    "video_title": "Random Image Feed Project",
+    "zoom_active": true,
+    "tags": "API",
+    "description": "Example Description 48",
+    "zoom_level": 1,
+    "video_speed": 1.2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project49.mp4",
+    "video_title": "ToDo List",
+    "zoom_active": true,
+    "tags": "App, Events",
+    "description": "Example Description 49",
+    "zoom_level": 1.2,
+    "video_speed": 2,
+    "is_muted": true
+  },
+  {
+    "video_path": "videos/Project50.mp4",
+    "video_title": "Insect Catch Game",
+    "zoom_active": true,
+    "tags": "App",
+    "description": "Example Description 50",
+    "zoom_level": 1,
+    "video_speed": 2,
+    "is_muted": true
+  }
+]

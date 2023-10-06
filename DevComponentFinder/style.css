@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box; /*padding -border won't affect with of the element*/
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+div {
+  font-size: 1.5rem;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* flex direction center*/
+  margin: 0;
+  height: 100vh;
+  /* overflow: hidden; by default scroll bar is not visible*/
+  margin: 0;
+  background-color: rgba(50, 179, 153, 0.2);
+}
+
+.cards {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  row-gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(243, 251, 181, 0.2);
+  width: 40rem;
+  height: 30rem;
+  border: 0.1rem solid rgb(138, 132, 132);
+  /*border-bottom-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem; */
+  border-radius: 0 2.5rem;
+}
+
+.card video {
+  /*border: .1rem solid black;*/
+  /*background-color: rgba(0, 0, 255, 0.2);*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  transform: scale(var(--zoom-factor, 1));
+}
+
+.card-video-container {
+  width: 100%;
+  height: 100%;
+  /*border-radius: 2rem;*/
+  /*box-shadow: .5rem .5rem .2rem .1rem rgba(0, 0, 255, 0.2);*/
+  overflow: hidden;
+  /*border-bottom-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem; */
+  border-radius: 0 2.5rem;
+}
+
+.card input {
+  width: 80%;
+  margin-top: 1rem;
+}
+
+.card .course-title {
+  margin: 1rem 0;
+}
+
+.card button {
+  width: 90%;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+
+/*Start Filter Container*/
+/* Style the dropdown container */
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Style the <select> element */
+#tagFilter {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  -webkit-appearance: none; /* Remove default appearance for Webkit browsers */
+  -moz-appearance: none; /* Remove default appearance for Firefox */
+  appearance: none; /* Remove default appearance */
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Add a custom arrow indicator for the dropdown */
+#tagFilter::-ms-expand {
+  display: none; /* Remove the default arrow indicator for IE/Edge */
+}
+
+#tagFilter:after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Make the indicator non-interactive */
+}
+
+/* Style the dropdown options */
+#tagFilter option {
+  padding: 10px;
+}
+
+#search,
+#tagFilter {
+  flex-grow: 1; /* Make both elements grow to take up the available space */
+}
+
+/* Start Search*/
+.user-form {
+  width: 100%;
+  max-width: 700px;
+}
+
+.user-form input {
+  width: 100%;
+  display: block;
+  background-color: #4c2885;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  font-family: inherit;
+  font-size: 1rem;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.user-form input::placeholder {
+  color: #bbb;
+}
+
+.user-form input:focus {
+  outline: none;
+}
+
+/* End Search*/
+
+/*Start Modal*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  display: flex;
+  max-height: 90vh;
+  min-height: 90vh;
+  max-width: 90vw;
+  background-color: #fefefe;
+  margin: 1% auto;
+  padding: 20px;
+  border: 1px solid #888;
+}
+
+.modal-content video {
+  width: 96%;
+  height: 90%;
+  margin: 0 1.5rem;
+  float: right;
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+  overflow: auto;
+}
+
+.right-section {
+  margin-left: 1.5rem;
+}
+
+#modal-right-content {
+  margin-left: 1.5 rem;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: ew-resize;
+  background-color: red;
+  width: 20px;
+  height: auto;
+}
+
+.divider svg {
+  color: white; /* or any color of your choice */
+}
+
+/* Accordion buttons */
+button.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  float: right;
+  font-weight: bold;
+}
+
+button.accordion.active,
+button.accordion:hover {
+  background-color: #ccc;
+}
+
+/* Accordion content panels */
+div.panel {
+  padding: 0 18px;
+  background-color: #f1f1f1;
+  max-height: 400px; /* Adjust as needed */
+  overflow-y: auto; /* Vertical scrolling */
+  display: none;
+  transition: max-height 0.2s ease-out; /* Optional: for smooth transition */
+}
+
+/* code {
+  display: block;
+  white-space: pre-wrap;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+} */
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: -2.5rem;
+  margin-right: -1.5rem;
+  margin-left: 0.5rem;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*End Modal*/
+
+/*End Filter Container*/
+
+@media (max-width: 500px) {
+  .user-form {
+    max-width: 400px;
+  }
+}

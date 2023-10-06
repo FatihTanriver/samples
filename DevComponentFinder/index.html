@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+  <link rel="stylesheet" href="style.css">
+  <!--Temp fix für favicon.ico - fontawesome icon-->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0a50 50 0 100 100 50 50 0 100-100zm0 15a35 35 0 110 70 35 35 0 010-70zm-8.93 13.93a3 3 0 014.24 0l11.32 11.32a3 3 0 01-4.24 4.24L50 33.24 38.93 44.31a3 3 0 01-4.24-4.24L45.76 15.93z' fill='%23000'/%3E%3C/svg%3E"
+    type="image/svg+xml">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- Prism CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
+
+  <!-- Prism JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+
+  <title>Component Finder</title>
+</head>
+
+<body>
+
+  <h1>Component Finder</h1>
+  <form class="user-form" id="form">
+    <div class="filter-container">
+      <input type="text" id="search" placeholder="Search">
+      <select id="tagFilter" name="tags">
+        <option value="" selected>Select Component</option>
+      </select>
+    </div>
+  </form>
+  <h3>Test 2</h3>
+
+  <div class="common_filters"> </div>
+
+  <div id="Project50Cards" class="cards">
+
+  </div>
+
+  <div id="myModal" class="modal">
+
+    <div class="modal-content">
+      <!-- <div class="d-block">
+        <span class="close">×</span>
+      </div> -->
+      <div class="left-section">
+        <div id="modal-card-container"></div>
+      </div>
+
+      <div id="divider" class="divider">
+        <svg width="20" height="40" viewBox="0 0 20 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Top arrow (right) -->
+          <path d="M5 5L15 10L5 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Bottom arrow (left) -->
+          <path d="M15 25L5 30L15 35" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+
+      </div>
+
+      <div class="right-section">
+        <div id="modal-right-content">
+          <button class="accordion active">HTML <span class="icon">&minus;</span></button>
+
+          <div class="panel" style="display: block;">
+            <pre><code class="language-html">
+
+          &lt;div class="container"&gt;
+              &lt;header&gt;
+                  &lt;h1&gt;My Website&lt;/h1&gt;
+              &lt;/header&gt;
+              &lt;nav&gt;
+                  &lt;ul&gt;
+                      &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                  &lt;/ul&gt;
+              &lt;/nav&gt;
+              &lt;main&gt;
+                  &lt;p&gt;Welcome to my website! This is a sample webpage.&lt;/p&gt;
+              &lt;/main&gt;
+          &lt;/div&gt;
+ 
+              </code></pre>
+          </div>
+
+          <button class="accordion">CSS <span class="icon">+</span></button>
+
+          <div class="panel">
+            <pre><code class="language-css">
+      body, html {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+      }
+      
+      .container {
+          max-width: 800px;
+          margin: auto;
+      }
+      
+      header {
+          background-color: #f0f0f0;
+          padding: 20px;
+          text-align: center;
+      }
+      
+      nav ul {
+          list-style-type: none;
+      }
+      
+      nav ul li {
+          display: inline;
+          margin: 10px;
+      }
+      
+      main {
+          padding: 20px;
+      }
+              </code></pre>
+          </div>
+
+          <button class="accordion">JavaScript <span class="icon">+</span></button>
+
+          <div class="panel">
+            <pre><code class="language-js">
+      document.addEventListener('DOMContentLoaded', function() {
+          const navItems = document.querySelectorAll('nav ul li a');
+          
+          navItems.forEach(item => {
+              item.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  alert('You clicked on ' + e.target.innerText);
+              });
+          });
+      });
+              </code></pre>
+          </div>
+        </div>
+      </div>
+
+
+      <span class="close">×</span>
+
+
+
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
