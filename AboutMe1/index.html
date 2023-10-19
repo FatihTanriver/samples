@@ -2,367 +2,132 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/typewriter.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/typography.css" />
+  <link rel="stylesheet" href="css/utility.css" />
+  <link rel="stylesheet" href="css/mediaQueries.css" />
+
+  <!--Start Seo Fix-->
+  <meta name="description"
+    content="Explore the professional portfolio of Fatih Tanriver, including details about bio, education, experience, and skills in [your specific field or industry].">
+
+  <meta name="robots" content="index,follow" />
+  <!--End Seo Fix-->
+
+  <!-- <link rel="stylesheet" href="css/typewriter.css" /> -->
+  <!-- <link rel="stylesheet" href="css//fa-all.min.css" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-  <title>Document</title>
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+
+  <!-- <script src="js/mermaid.min.js" defer></script> -->
+
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>A</text></svg>"
+    type="image/svg+xml" />
+  <title>Fatih Tanriver Portfolio</title>
 </head>
 
 <body>
-
-  <!-- Header Section
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-  <header id="header">
-    <div class="main_nav">
-      <div class="container">
-        <div class="mobile-toggle"> <span></span> <span></span> <span></span> </div>
-        <nav>
-          <ul>
-            <li><a class="smoothscroll" href="#header">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About</a></li>
-            <li><a class="smoothscroll" href="#team">Experience</a></li>
-            <li><a class="smoothscroll" href="#skills">Skills</a></li>
-            <li><a class="smoothscroll" href="#portfolio">Work</a></li>
-            <li><a class="smoothscroll" href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+  <header>
+    <button class="hamburger" aria-label="Open menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div>
+      <img class="logo" src="images/logo1A.png" alt="logo site" />
     </div>
-    <div class="title">
-      <div><span class="icon heading"></span></div>
-      <div class="smallsep heading"></div>
-      <!-- <h1 class="heading"> Clean & Simple</h1>
-      <h2 class="heading">Lorem ipsum dolor sit amet</h2> -->
-
-
-      <h1 aria-label="Hi! I'm a developer">
-        `Hi! I'm &nbsp;a <span style="color:#FF6363">{</span> &nbsp;<span class="typewriter"></span> <span
-          style="color:#FF6363">}</span>`
-      </h1>
-      <h2 class="heading">Fatih <span style="color:#FF6363">/</span> Tanriver</h2>
-
-      <!-- <div class="avatar">
-        <a href="https://github.com/FatihTanriver" target="_blank">
-          <img src="images/Profil_Bild.jpg" class="user" />
-        </a>
-      </div> -->
-
-      <div class="avatar">
-        <a href="https://github.com/abc_user" target="_blank">
-          <img src="images/Fatih_Resim_0002.jpg" class="user" />
-        </a>
-      </div>
-
-      <!-- <div class="avatar">
-        <a href="https://github.com/abc_user" target="_blank">
-          <img src="images/Fatih_Resim_0001.jpg" class="user" />
-          <img src="images/Fatih_Resim_0002.jpg" class="user" />
-          <img src="images/28234_380883267687_646532687_4000822_7806838_n.jpg" class="user" />
-          <img src="images/892326_10151354942277688_1288465345_o.jpg" class="user" />
-        </a>
-      </div> -->
-
-      <!-- <div class="avatar">
-        <a href="https://github.com/FatihTanriver" target="_blank">
-          <img src="images/892326_10151354942277688_1288465345_o.jpg" class="user" />
-        </a>
-      </div> -->
-
-      <!-- <div class="avatar">
-        <a href="https://github.com/FatihTanriver" target="_blank">
-          <img src="images/Fatih_Resim_0001.jpg" class="user" />
-        </a>
-      </div> -->
-
-      <a class="smoothscroll" href="#about">
-        <div class="mouse">
-          <div class="wheel"></div>
-        </div>
-      </a>
+    <nav>
+      <ul>
+        <li><a href="#section1">Welcome</a></li>
+        <li><a href="#section2">About</a></li>
+        <li><a href="#section3">Skills</a></li>
+        <li><a href="#section4">Demos</a></li>
+        <li><a href="#section5">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="theme-switcher">
+      <button id="theme-toggle-btn">Toggle Theme</button>
     </div>
-    <a class="smoothscroll" href="#about">
-      <div class="scroll-down"></div>
-    </a>
   </header>
+  <main>
+    <section id="section1" class="mainSection">
+      <!-- <h2>Welcome Text to Website</h2> -->
 
-  <!-- About Section
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-  <section id="about">
-    <div class="container">
-      <div class="row">
-        <h1>{Bio}</h1>
-        <div class="block"></div>
-        <p></p>
-      </div>
-      <div class="row">
-        <div class="six columns">
-          <h3><span class="icon"></span>Enthuasim Development</h3>
-          <p>As a Developer with a background in Mathematical Engineering and High Integrity Systems, I've melded my
-            affinity for math and statistics with my coding endeavors. My experience is fortified by my ability to
-            create responsive designs using Bootstrap and SASS, exemplified in projects involving C#, MVC, JavaScript
-            (ES6), R, and Vue.js.
-
-            A profound interest in modern frontend frameworks complements my passion for data representation and
-            visualization. Exploring visual narratives using tools like DevExtreme, mermaid.js, go.js, svg, prisma.js,
-            and d3.js is both a pleasure and an intrigue.
-
-            In every project, I strive to merge the quantitative precision of mathematical engineering with the creative
-            finesse of frontend development, aiming to bring data to life in insightful and captivating visual forms.
-          </p>
+      <div class="row-container">
+        <div class="row-item hero-container">
+          <img class="hero-img" src="images/undraw/programming1.svg" alt="hero image">
         </div>
-        <div class="six columns">
-          <h3><span class="icon"></span>Our Approach</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        <div class="row-item scrl-txt-wrapper">
 
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sint praesentium eaque facere iste
-            veniam iure aliquam suscipit sequi labore et distinctio ipsa, tempore earum tenetur veritatis autem itaque
-            laboriosam.
-            Eveniet, dignissimos voluptates minima corrupti cum, pariatur eaque esse doloribus fugit libero voluptatibus
-            ab! Totam hic cupiditate alias natus labore eaque sint odit tenetur? Nulla facilis sit dolorem magnam
-            quidem!
-            Laborum, quos exercitationem minima dicta eligendi, illum cupiditate architecto rerum fuga quae obcaecati
-            sint reprehenderit aspernatur sit consequatur tempora enim nostrum!
-
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Team Section
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-  <section id="team">
-    <div class="container">
-      <div class="row">
-        <h1>Meet the Team</h1>
-        <div class="block"></div>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="row">
-        <div class="three columns"> <img src="http://placehold.it/220x220" width="220" height="220" alt="" />
-          <h4>Naruto Uzumaki</h4>
-          <p>Creative Director</p>
-          <span class="typcn typcn-social-facebook-circular icon"></span><span
-            class="typcn typcn-social-instagram-circular icon"></span><span
-            class="typcn typcn-social-google-plus-circular icon"></span><span
-            class="typcn typcn-social-linkedin-circular icon"></span>
-        </div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" width="220" height="220" alt="" />
-          <h4>Sasuke Uchiha</h4>
-          <p>Lead Designer</p>
-          <span class="typcn typcn-social-facebook-circular icon"></span><span
-            class="typcn typcn-social-instagram-circular icon"></span><span
-            class="typcn typcn-social-google-plus-circular icon"></span><span
-            class="typcn typcn-social-linkedin-circular icon"></span>
-        </div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" width="220" height="220" alt="" />
-          <h4>Shikamaru Nara</h4>
-          <p>Designer</p>
-          <span class="typcn typcn-social-facebook-circular icon"></span><span
-            class="typcn typcn-social-instagram-circular icon"></span><span
-            class="typcn typcn-social-google-plus-circular icon"></span><span
-            class="typcn typcn-social-linkedin-circular icon"></span>
-        </div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" width="220" height="220" alt="" />
-          <h4>Sakura Haruno</h4>
-          <p>Designer</p>
-          <span class="typcn typcn-social-facebook-circular icon"></span><span
-            class="typcn typcn-social-instagram-circular icon"></span><span
-            class="typcn typcn-social-google-plus-circular icon"></span><span
-            class="typcn typcn-social-linkedin-circular icon"></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-  <section id="skills">
-    <div class="container">
-      <h1>Skills</h1>
-      <div class="block"></div>
-      <div class="row">
-        <div class="one-third column">
-          <h3>Backend</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, recusandae, at, labore velit eligendi
-            amet nobis repellat natus.</p>
-        </div>
-        <div class="one-third column">
-          <h3>Frontend</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, recusandae, at, labore velit eligendi
-            amet nobis repellat natus.</p>
-        </div>
-        <div class="one-third column">
-          <h3>Development</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, recusandae, at, labore velit eligendi
-            amet nobis repellat natus.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="four columns">
-          <div class="progressBar">
-            <h4>C#</h4>
-            <div class="progressBarContainer">
-              <div class="progressBarValue value-90"></div>
-            </div>
+          <div class="d-inline-block">
+            <span class="pre-scrl-text d-inline-block">I code with</span>
           </div>
-          <div class="progressBar">
-            <h4>Node.js</h4>
-            <div class="progressBarContainer">
-              <div class="progressBarValue value-80"></div>
-            </div>
-          </div>
-          <div class="progressBar">
-            <h4>Jquery</h4>
-            <div class="progressBarContainer">
-              <div class="progressBarValue value-30"></div>
-            </div>
-          </div>
-          <div class="progressBar">
-            <h4>JS</h4>
-            <div class="progressBarContainer">
-              <div class="progressBarValue value-70"></div>
+
+          <div class="scrl d-inline-block">
+            <div class="scrl_container">
+              <ul class="scrl_list">
+                <li class="scrl_item scrl_logo">
+                  <div class="logo-container">
+                    <img src="images/logo/CSharp-Logo.png" alt="logo csharp">
+                  </div>
+                </li>
+                <li class="scrl_item scrl_logo">
+                  <div class="logo-container">
+                    <img src="images/logo/JS-Logo.png" alt="logo javascript">
+                  </div>
+                </li>
+                <li class="scrl_item scrl_logo">
+                  <div class="logo-container">
+                    <img src="images/logo/TS-Logo.png" alt="logo typescript">
+                  </div>
+                </li>
+                <li class="scrl_item scrl_logo">
+                  <div class="logo-container">
+                    <img src="images/logo/HTML-Logo.png" alt="logo html">
+                  </div>
+                </li>
+                <li class="scrl_item scrl_logo">
+                  <div class="logo-container">
+                    <img src="images/logo/CSS-Logo.png" alt="logo css">
+                  </div>
+                </li>
+                <li class="scrl_item scrl_logo">
+                  <div class="logo-container">
+                    <img src="images/logo/R-Logo.png" alt="logo R">
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-        <div class="four columns">
-          <div class="progressBar">
-            <h4>HTML5</h4>
-            <div class="progressBarContainer">
-              <div class="progressBarValue value-90"></div>
-            </div>
-          </div>
-          <div class="progressBar">
-            <h4>CSS3</h4>
-            <div class="progressBarContainer">
-              <div class="progressBarValue value-80"></div>
-            </div>
-          </div>
-          <div class="progressBar">
-            <h4>Jquery</h4>
-            <div class="progressBarContainer">
-              <div class="progressBarValue value-30"></div>
-            </div>
-          </div>
-          <div class="progressBar">
-            <h4>JS</h4>
-            <div class="progressBarContainer">
-              <div class="progressBarValue value-70"></div>
-            </div>
-          </div>
-        </div>
-        <div class="four columns">
-        </div>
       </div>
-      <div class="row">
-
       </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-  <section id="portfolio">
-    <div class="container">
-      <h1>Work</h1>
-      <div class="block"></div>
-      <div class="row">
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work One" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Two" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Three" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Four" /></div>
-      </div>
-      <div class="row" style="margin-top: 30px;">
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Five" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Six" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Seven" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Eight" /></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-  <section id="testimonial">
-    <div class="container">
-      <div class="quoteLoop">
-        <blockquote class="quote"> <img src="http://placehold.it/100x100" width="100" height="100" alt="" />
-          <h5>&nbsp;<br>
-            &rdquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua.&rdquo;<br>
-            <small>Steve Bruce, Sed ut perspiciatis unde omnis</small>
-          </h5>
-        </blockquote>
-        <blockquote class="quote"> <img src="http://placehold.it/100x100" width="100" height="100" alt="" />
-          <h5>&nbsp;<br>
-            &ldquo;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-            totam rem aperiam.&rdquo;<br>
-            <small>Tom Jones, Sed ut perspiciatis unde omnis</small>
-          </h5>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-  <section id="contact">
-    <div class="container">
-      <h1>Contact</h1>
-      <div class="block"></div>
-      <form>
-        <div class="row">
-          <div class="six columns">
-            <label for="exampleRecipientInput">Name</label>
-            <input class="u-full-width" type="text">
-          </div>
-          <div class="six columns">
-            <label for="exampleEmailInput">Email</label>
-            <input class="u-full-width" type="email">
-          </div>
-        </div>
-        <div class="row">
-          <label for="exampleMessage">Message</label>
-          <textarea class="u-full-width"></textarea>
-          <input class="button-primary" type="submit" value="Submit">
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer Section
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    </section>
+    <section id="section2" class="mainSection">
+      <h2>About</h2>
+      <!-- <pre class="mermaid">
+        </pre> -->
+    </section>
+    <section id="section3" class="mainSection">
+      <h2>Skills and Tools</h2>
+    </section>
+    <section id="section4" class="mainSection">
+      <h2>Demo Projects</h2>
+    </section>
+    <section id="section5" class="mainSection">
+      <h2>Contact Details</h2>
+    </section>
+  </main>
 
   <footer>
-    <div class="container">
-      <div class="nine columns">
-        <p>Thanks for the visit</p>
-      </div>
-      <div class="three columns"> <span class="typcn typcn-social-facebook-circular socialIcons"></span> <span
-          class="typcn typcn-social-instagram-circular socialIcons"></span> <span
-          class="typcn typcn-social-google-plus-circular socialIcons"></span> <span
-          class="typcn typcn-social-linkedin-circular socialIcons"></span> </div>
-    </div>
+    <h2>Footer Section</h2>
   </footer>
 
-
-
-
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
