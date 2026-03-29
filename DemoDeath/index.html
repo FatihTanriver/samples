@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>İslam’a Göre Ölüm Sonrası Süreç</title>
+<meta name="description" content="Metin odaklı, modern editoryal web sayfası taslağı." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-main:#f8f9f7;
+  --bg-soft:#eef3ee;
+  --surface:#ffffff;
+  --surface-soft:#f5f8f4;
+  --surface-alt:#f1f5f2;
+  --text-main:#1f2a24;
+  --text-soft:#324039;
+  --text-muted:#5f6b63;
+  --line:#d6ddd8;
+  --line-strong:#bdc9c0;
+
+  --primary:#5a7f6b;
+  --primary-deep:#3d5f4d;
+  --primary-soft:#dce7df;
+
+  --success:#4f8a5b;
+  --warning:#b88a35;
+  --danger:#b84a4a;
+  --info:#4a6fa5;
+  --metaphysical:#7a6fa5;
+  --divine:#a38737;
+
+  --ayet:#f4f8f2;
+  --hadis:#f5f4fa;
+  --note:#faf7ef;
+
+  --shadow-sm:0 10px 26px rgba(31,42,36,.06);
+  --shadow-md:0 18px 48px rgba(31,42,36,.09);
+  --radius-sm:14px;
+  --radius-md:22px;
+  --radius-lg:30px;
+  --max:1180px;
+  --reading:720px;
+
+  --space-xs:4px;
+  --space-sm:8px;
+  --space-md:16px;
+  --space-lg:24px;
+  --space-xl:40px;
+  --space-2xl:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(90,127,107,.09), transparent 28%),
+    radial-gradient(circle at top right, rgba(74,111,165,.08), transparent 24%),
+    linear-gradient(180deg, #fbfcfb 0%, var(--bg-main) 14%, #f7f9f7 100%);
+  color:var(--text-main);
+  line-height:1.75;
+}
+a{color:inherit;text-decoration:none}
+p{margin:0 0 1rem}
+img{max-width:100%;display:block}
+strong{font-weight:700}
+pre{
+  white-space:pre-wrap;
+  font-family:inherit;
+  background:rgba(255,255,255,.85);
+  padding:1rem 1.1rem;
+  border:1px solid rgba(31,42,36,.08);
+  border-radius:16px;
+  margin:0;
+  line-height:1.7;
+  color:var(--text-soft)
+}
+.site-progress{
+  position:fixed;top:0;left:0;height:4px;
+  background:linear-gradient(90deg,var(--primary),#7aa18a);
+  width:0;z-index:70
+}
+.topbar{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(10px);
+  background:rgba(248,249,247,.86);
+  border-bottom:1px solid rgba(90,127,107,.12)
+}
+.topbar-inner{
+  max-width:var(--max);margin:0 auto;padding:0.95rem 1.25rem;
+  display:flex;gap:1rem;align-items:center;justify-content:space-between
+}
+.brand{
+  font-weight:700;letter-spacing:.01em;
+  color:var(--primary-deep)
+}
+.nav-links{display:flex;gap:.55rem;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{
+  padding:.56rem .82rem;border-radius:999px;
+  color:var(--text-muted);font-size:.93rem;
+  transition:background .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease
+}
+.nav-links a:hover,.nav-links a.active{
+  background:var(--surface);
+  color:var(--text-main);
+  box-shadow:var(--shadow-sm);
+  transform:translateY(-1px)
+}
+.hero{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:5.5rem 1.25rem 2.2rem;
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);
+  gap:2rem;
+  align-items:end
+}
+.eyebrow{
+  display:inline-flex;
+  padding:.45rem .78rem;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(255,255,255,.8);
+  color:var(--text-muted);
+  font-size:.9rem;
+  margin-bottom:1rem
+}
+.hero h1,
+.hero-panel h2,
+.chapter-copy h2,
+.topic-header h3,
+.chapter-overview h3,
+.infographic-copy h2{
+  font-family:'Source Serif 4', Georgia, serif
+}
+.hero h1{
+  font-size:clamp(2.75rem,5vw,5rem);
+  line-height:1.02;
+  margin:.2rem 0 1rem;
+  letter-spacing:-.03em;
+  color:var(--text-main)
+}
+.hero p{
+  font-size:1.08rem;
+  color:var(--text-soft);
+  max-width:62ch
+}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:.95rem 1.25rem;border-radius:999px;
+  border:1px solid var(--line);
+  background:var(--surface);
+  font-weight:600;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease
+}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm);border-color:var(--line-strong)}
+.btn.primary{
+  background:linear-gradient(180deg,var(--primary),var(--primary-deep));
+  border-color:var(--primary-deep);
+  color:#fff
+}
+.hero-panel{
+  background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(244,248,244,.92));
+  border:1px solid var(--line);
+  padding:1.5rem;
+  border-radius:28px;
+  box-shadow:var(--shadow-md)
+}
+.hero-panel h2{font-size:1.6rem;margin:.2rem 0 .8rem}
+.meta-list{display:grid;gap:.8rem;margin-top:1rem}
+.meta-item{
+  padding:1rem;
+  border-radius:18px;
+  background:linear-gradient(180deg,#fff,var(--surface-soft));
+  border:1px solid rgba(90,127,107,.12)
+}
+.meta-item small{display:block;color:var(--text-muted);font-size:.87rem;margin-top:.25rem}
+.journey{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 1.25rem 2rem
+}
+.journey-track{
+  display:grid;
+  grid-template-columns:repeat(10,minmax(160px,1fr));
+  gap:.8rem;
+  overflow:auto;
+  padding-bottom:.45rem
+}
+.journey-step{
+  background:linear-gradient(180deg,#fff,var(--surface-soft));
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:1rem;
+  min-height:110px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  box-shadow:var(--shadow-sm);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease
+}
+.journey-step:hover{
+  transform:translateY(-2px);
+  border-color:rgba(90,127,107,.3);
+  box-shadow:var(--shadow-md)
+}
+.journey-step span{font-size:.82rem;color:var(--text-muted)}
+.infographic-section{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 1.25rem 1rem;
+}
+.infographic-shell{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
+  gap:1.5rem;
+  padding:1.35rem;
+  background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(244,248,244,.95));
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-md);
+  align-items:start
+}
+.infographic-figure{
+  margin:0;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid var(--line-strong);
+  background:#fff;
+  box-shadow:var(--shadow-sm)
+}
+.infographic-figure img{width:100%;height:auto}
+.infographic-figure figcaption{
+  padding:.8rem 1rem;
+  font-size:.92rem;
+  color:var(--text-muted);
+  border-top:1px solid var(--line);
+  background:var(--surface-soft)
+}
+.infographic-copy{
+  display:grid;
+  align-content:start;
+  gap:1rem
+}
+.infographic-copy h2{
+  margin:0;
+  font-size:clamp(1.8rem,3vw,2.35rem);
+  line-height:1.1
+}
+.infographic-copy p{color:var(--text-soft);max-width:48ch}
+.info-badges{
+  display:flex;flex-wrap:wrap;gap:.55rem
+}
+.info-badges span{
+  display:inline-flex;align-items:center;
+  padding:.48rem .72rem;border-radius:999px;
+  font-size:.9rem;
+  background:var(--surface);
+  border:1px solid var(--line);
+  color:var(--text-muted)
+}
+.main{padding-bottom:5rem}
+.chapter{
+  scroll-margin-top:90px;
+  padding:1.15rem 1.25rem 0
+}
+.chapter + .chapter{margin-top:1.5rem}
+.chapter-shell{
+  max-width:var(--max);
+  margin:0 auto;
+  background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(247,250,247,.92));
+  border:1px solid var(--line);
+  border-radius:32px;
+  padding:1.45rem;
+  box-shadow:var(--shadow-md);
+  position:relative;
+  overflow:hidden
+}
+.chapter-shell::before{
+  content:"";
+  position:absolute;inset:0 auto 0 0;width:8px;
+  background:linear-gradient(180deg,var(--chapter-color,#5a7f6b), transparent 88%);
+  border-radius:32px 0 0 32px
+}
+main > .chapter:nth-of-type(1){--chapter-color:#5a7f6b}
+main > .chapter:nth-of-type(2){--chapter-color:#4e7e73}
+main > .chapter:nth-of-type(3){--chapter-color:#b86a46}
+main > .chapter:nth-of-type(4){--chapter-color:#7a6fa5}
+main > .chapter:nth-of-type(5){--chapter-color:#b88a35}
+main > .chapter:nth-of-type(6){--chapter-color:#4a6fa5}
+main > .chapter:nth-of-type(7){--chapter-color:#5a8d54}
+main > .chapter:nth-of-type(8){--chapter-color:#3f8ea1}
+main > .chapter:nth-of-type(9){--chapter-color:#a38737}
+main > .chapter:nth-of-type(10){--chapter-color:#3f76ad}
+
+.chapter-kicker{
+  display:inline-flex;
+  padding:.35rem .62rem;
+  border-radius:999px;
+  background:color-mix(in srgb, var(--chapter-color) 12%, white);
+  color:var(--chapter-color);
+  font-size:.78rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:700;
+  margin:.25rem 0 1rem
+}
+.chapter-header{
+  display:grid;
+  grid-template-columns:minmax(0,1.22fr) minmax(280px,.78fr);
+  gap:1.25rem;
+  align-items:start
+}
+.chapter-copy h2{
+  font-size:clamp(2rem,3vw,3rem);
+  line-height:1.08;
+  margin:.2rem 0 .8rem;
+  color:var(--text-main)
+}
+.chapter-copy p{font-size:1.05rem;color:var(--text-soft);max-width:65ch}
+.chapter-media{align-self:stretch}
+.media-placeholder{
+  height:100%;
+  min-height:220px;
+  border-radius:24px;
+  border:1px dashed rgba(90,127,107,.35);
+  background:
+    radial-gradient(circle at top right, rgba(90,127,107,.12), transparent 40%),
+    linear-gradient(180deg,#fbfcfb,#eef3ee);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:1.2rem;
+  color:var(--text-muted)
+}
+.media-placeholder span{
+  font-weight:700;
+  color:var(--text-main);
+  margin-bottom:.35rem
+}
+.diagram-card{
+  margin:1.25rem 0 0;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--shadow-sm)
+}
+.diagram-card summary{
+  list-style:none;
+  display:flex;justify-content:space-between;gap:1rem;
+  align-items:center;padding:1rem 1.15rem;
+  cursor:pointer
+}
+.diagram-card summary::-webkit-details-marker{display:none}
+.summary-tag{font-size:.9rem;color:var(--text-muted);font-weight:600}
+.diagram-card .mermaid{
+  padding:1rem 1.15rem 1.35rem;
+  border-top:1px solid var(--line);
+  overflow:auto;
+  background:linear-gradient(180deg,#fff,#fbfcfb)
+}
+.chapter-overview{
+  margin:1.25rem 0 0;
+  padding:1.15rem;
+  border-radius:24px;
+  background:linear-gradient(180deg, var(--surface-alt), #edf3ee);
+  border:1px solid rgba(90,127,107,.12);
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:1rem
+}
+.chapter-overview h3{margin:.1rem 0 .4rem;font-size:1.35rem}
+.chapter-overview p{color:var(--text-muted)}
+.chapter-overview ol{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.85rem
+}
+.chapter-overview li a{
+  display:block;padding:1rem;border-radius:18px;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(31,42,36,.08);
+  min-height:100%;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease
+}
+.chapter-overview li a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(90,127,107,.25);
+  box-shadow:var(--shadow-sm)
+}
+.chapter-overview li span{
+  display:block;color:var(--text-muted);font-size:.88rem;margin-top:.35rem
+}
+.topic{padding-top:1.9rem}
+.topic-header{
+  max-width:74ch;
+  margin-bottom:1rem;
+  padding-bottom:.45rem;
+  border-bottom:1px solid rgba(31,42,36,.07)
+}
+.topic-header h3{
+  font-size:clamp(1.55rem,2.2vw,2.2rem);
+  margin:0 0 .45rem
+}
+.topic-header p{color:var(--text-soft)}
+.subtopic{
+  background:linear-gradient(180deg,#fff, #fbfcfb);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:1.1rem 1rem;
+  margin:1rem 0;
+  box-shadow:var(--shadow-sm)
+}
+.subtopic-head{
+  display:flex;gap:1rem;justify-content:space-between;align-items:flex-start;
+  margin-bottom:.65rem
+}
+.subtopic-head h4{
+  font-size:1.14rem;
+  margin:0;
+  font-weight:700;
+  color:var(--text-main)
+}
+.copy-link{
+  border:1px solid var(--line);
+  background:#fff;
+  padding:.6rem .85rem;
+  border-radius:999px;
+  font:inherit;
+  color:var(--text-muted);
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .2s ease,border-color .2s ease,color .2s ease
+}
+.copy-link:hover{background:var(--surface-soft);border-color:var(--line-strong);color:var(--text-main)}
+.reading-copy{
+  max-width:78ch;
+  color:var(--text-soft)
+}
+.accordion{
+  margin-top:.95rem;
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 2px 0 rgba(255,255,255,.7) inset
+}
+.accordion summary{
+  list-style:none;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:1rem;
+  padding:.95rem 1rem;
+  cursor:pointer;
+  font-weight:700
+}
+.accordion summary::-webkit-details-marker{display:none}
+.accordion .chev{
+  width:28px;height:28px;border-radius:50%;
+  display:inline-grid;place-items:center;
+  border:1px solid rgba(31,42,36,.08);
+  background:rgba(255,255,255,.72);
+  color:var(--text-muted);
+  transition:transform .2s ease
+}
+.accordion[open] .chev{transform:rotate(45deg)}
+.accordion.ayet{background:var(--ayet);border-left:4px solid var(--primary)}
+.accordion.hadis{background:var(--hadis);border-left:4px solid var(--metaphysical)}
+.accordion-body{padding:0 1rem 1rem;display:grid;gap:.95rem}
+.ref-item{
+  background:rgba(255,255,255,.86);
+  border-radius:18px;
+  padding:.92rem;
+  border:1px solid rgba(31,42,36,.08)
+}
+.ref-meta{
+  font-size:.85rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:.06em;
+  color:var(--text-muted);margin-bottom:.55rem
+}
+.interpretation{
+  margin-top:.95rem;
+  padding:1rem 1rem 1rem 1.05rem;
+  background:var(--note);
+  border:1px solid #eadfbd;
+  border-left:4px solid var(--divine);
+  border-radius:18px
+}
+.interpretation h5{margin:0 0 .65rem;font-size:1rem}
+.interpretation ul{margin:0;padding-left:1.1rem}
+.interpretation li+li{margin-top:.38rem}
+.chapter-next{
+  margin-top:1.6rem;padding-top:1rem;
+  border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:1rem;align-items:center;
+  color:var(--text-muted)
+}
+.chapter-next a{font-weight:700;color:var(--text-main)}
+.footer{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:1.7rem 1.25rem 4rem;
+  color:var(--text-muted)
+}
+.utility-bar{
+  position:fixed;right:18px;bottom:18px;
+  display:grid;gap:.6rem;z-index:40
+}
+.utility-btn{
+  border:none;border-radius:999px;
+  background:linear-gradient(180deg,var(--primary),var(--primary-deep));
+  color:#fff;padding:.9rem 1rem;
+  box-shadow:var(--shadow-md);cursor:pointer;font:inherit
+}
+.utility-btn:hover{filter:brightness(1.03)}
+:focus-visible{
+  outline:3px solid rgba(74,111,165,.45);
+  outline-offset:2px
+}
+@media (max-width: 980px){
+  .hero,.chapter-header,.chapter-overview,.infographic-shell{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .journey-track{grid-template-columns:repeat(10, minmax(180px,1fr))}
+}
+@media (max-width: 640px){
+  .hero{padding-top:3.4rem}
+  .chapter{padding-inline:.8rem}
+  .chapter-shell{padding:1rem}
+  .subtopic-head{flex-direction:column;align-items:stretch}
+  .copy-link{width:100%}
+  .utility-bar{right:12px;bottom:12px}
+  .utility-btn{padding:.82rem .95rem}
+}
+</style>
+</head>
+<body>
+<div class="site-progress" id="siteProgress"></div>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="#top">Ölüm Sonrası Süreç</a><nav class="nav-links"><a href="#1-olum-ve-ontolojik-gecis">Ölüm ve Ontolojik Geçiş</a><a href="#2-berzah-sureci-kabir-hayati">Berzah Süreci (Kabir Hayatı)</a><a href="#3-kozmik-kiyamet-sureci">Kozmik Kıyamet Süreci</a><a href="#4-yeniden-yaratilis">Yeniden Yaratılış</a><a href="#5-toplanma-ve-bekleyis">Toplanma ve Bekleyiş</a><a href="#6-ilahi-yargilama-sureci">İlahi Yargılama Süreci</a><a href="#7-ara-durum">Ara Durum</a><a href="#8-arinma-ve-gecis">Arınma ve Geçiş</a><a href="#9-ilahi-rahmet-mekanizmasi">İlahi Rahmet Mekanizması</a><a href="#10-nihai-sonuc-ebediyet">Nihai Sonuç (Ebediyet)</a></nav></div></header>
+<div id="top"></div>
+<section class="hero">
+  <div>
+    <span class="eyebrow">Metin odaklı editoryal web tasarımı</span>
+    <h1>İslam’a Göre Ölüm Sonrası Süreç</h1>
+    <p>Yüklenen markdown içeriği; güçlü tipografi, bölüm bazlı akış, kontrollü etkileşimler ve seçilmiş görsel alanlarla metin merkezli bir editoryal deneyime dönüştürüldü. Amaç, uzun içeriği daha rahat okunur, karşılaştırılabilir ve keşfedilebilir hale getirmek.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#1-olum-ve-ontolojik-gecis">Yolculuğu başlat</a>
+      <a class="btn" href="#journey">Süreç haritasını gör</a>
+    </div>
+  </div>
+  <aside class="hero-panel">
+    <h2>Tasarım sisteminin odağı</h2>
+    <div class="meta-list">
+      <div class="meta-item"><strong>Metin merkezli</strong><small>Görseller destekleyici, asıl odak okuma deneyimi.</small></div>
+      <div class="meta-item"><strong>Bölüm bazlı kurgu</strong><small>Her ana başlık kendi editoryal bloğuna dönüştürüldü.</small></div>
+      <div class="meta-item"><strong>Seçmeli dinamizm</strong><small>Accordion, ilerleme çubuğu ve genişletilebilir Mermaid diyagramları.</small></div>
+    </div>
+  </aside>
+</section>
+<section id="journey" class="journey"><div class="journey-track"><a class="journey-step" href="#1-olum-ve-ontolojik-gecis"><span>Bölüm 01</span><strong>Ölüm ve Ontolojik Geçiş</strong></a><a class="journey-step" href="#2-berzah-sureci-kabir-hayati"><span>Bölüm 02</span><strong>Berzah Süreci (Kabir Hayatı)</strong></a><a class="journey-step" href="#3-kozmik-kiyamet-sureci"><span>Bölüm 03</span><strong>Kozmik Kıyamet Süreci</strong></a><a class="journey-step" href="#4-yeniden-yaratilis"><span>Bölüm 04</span><strong>Yeniden Yaratılış</strong></a><a class="journey-step" href="#5-toplanma-ve-bekleyis"><span>Bölüm 05</span><strong>Toplanma ve Bekleyiş</strong></a><a class="journey-step" href="#6-ilahi-yargilama-sureci"><span>Bölüm 06</span><strong>İlahi Yargılama Süreci</strong></a><a class="journey-step" href="#7-ara-durum"><span>Bölüm 07</span><strong>Ara Durum</strong></a><a class="journey-step" href="#8-arinma-ve-gecis"><span>Bölüm 08</span><strong>Arınma ve Geçiş</strong></a><a class="journey-step" href="#9-ilahi-rahmet-mekanizmasi"><span>Bölüm 09</span><strong>İlahi Rahmet Mekanizması</strong></a><a class="journey-step" href="#10-nihai-sonuc-ebediyet"><span>Bölüm 10</span><strong>Nihai Sonuç (Ebediyet)</strong></a></div></section>
+
+<section class="infographic-section" aria-labelledby="infographic-title">
+  <div class="infographic-shell">
+    <figure class="infographic-figure">
+      <img src="Infograph_01.png" alt="Ölüm sonrası sürecin on ana aşamasını gösteren infografik." />
+      <figcaption>Genel süreç haritası: aşamalar, ara durumlar ve nihai sonuçlar tek bakışta.</figcaption>
+    </figure>
+    <div class="infographic-copy">
+      <span class="eyebrow">Görsel süreç özeti</span>
+      <h2 id="infographic-title">İnfografik genel okuma rehberi</h2>
+      <p>Bu görsel, metindeki ana akışı kuşbakışı gösterir. Sayfada ilerlerken onu bir referans haritası gibi kullanabilir; her bölümde metinsel açıklamaları, kaynakları ve yorum bloklarını daha detaylı inceleyebilirsiniz.</p>
+      <div class="info-badges">
+        <span>Metin odaklı deneyim</span>
+        <span>Görsel destekleyici</span>
+        <span>Süreç bazlı okuma</span>
+        <span>Erişilebilir kontrast</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="#1-olum-ve-ontolojik-gecis">Bölüm 1’e geç</a>
+        <a class="btn" href="#10-nihai-sonuc-ebediyet">Nihai sonuca atla</a>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="main"><section id="1-olum-ve-ontolojik-gecis" class="chapter">
+<div class="chapter-shell">
+<div class="chapter-kicker">Bölüm 01</div>
+<header class="chapter-header">
+<div class="chapter-copy"><h2>1. Ölüm ve Ontolojik Geçiş</h2></div>
+<aside class="chapter-media"><div class="media-placeholder"><span>İllüstrasyon / medya alanı</span><small>Bu bölüm için görsel sonradan eklenebilir.</small></div></aside>
+</header>
+<details class="diagram-card"><summary><div><strong>Süreç Haritası</strong><p>Ölümden berzah başlangıcına geçiş.</p></div><span class="summary-tag">Diyagramı Aç</span></summary><div class="mermaid">flowchart LR
+A[Ölüm] --&gt; B[Sekerat]
+B --&gt; C[Ruhun Kabzı]
+C --&gt; D{Tecrübe}
+D --&gt;|Mümin| E[Kolay ve huzurlu geçiş]
+D --&gt;|İnkar eden| F[Zor ve sarsıcı geçiş]
+E --&gt; G[Berzah başlangıcı]
+F --&gt; G</div></details>
+<div class="chapter-overview"><div><h3>Bölüm haritası</h3><p>Bu bölümün alt başlıklarına hızlı geçiş.</p></div><ol><li><a href="#11-olum-mevt-sekerat">1.1 Ölüm (Mevt / Sekerat)<span>2 alt bölüm</span></a></li><li><a href="#12-ruhun-kabzi-kabz-i-ruh">1.2 Ruhun Kabzı (Kabz-ı Ruh)<span>2 alt bölüm</span></a></li></ol></div>
+<section id="11-olum-mevt-sekerat" class="topic">
+<header class="topic-header"><h3>1.1 Ölüm (Mevt / Sekerat)</h3></header>
+<article id="111-can-cekisme-sureci" class="subtopic">
+<div class="subtopic-head"><h4>1.1.1 Can çekişme süreci</h4><button class="copy-link" data-link="#111-can-cekisme-sureci">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Ölüm anı, ruhun bedenden ayrılma sürecidir. Bu süreçte kişi metafizik gerçekliğe geçişin ilk tecrübesini yaşar.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (4)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">KAF 50:19</div><pre>        KAF 50:19 - Vakti geldiğinde ölüm sekeratı başlayınca, can çekiştiği sırada insana &quot;İşte&quot; denir, &quot;senin en çok nefret edip kaçtığın şey!&quot;</pre></div><div class="ref-item"><div class="ref-meta">Vakıa 56:83-85</div><pre>        - Haydi görelim sizi, can boğaza geldiğinde,
+        - O vakit can çekişenin yanında bulunan sizler bakar durursunuz.
+        - Biz ise, ona sizden daha yakınız, ama siz göremezsiniz.</pre></div><div class="ref-item"><div class="ref-meta">HADiSLER</div><pre></pre></div><div class="ref-item"><div class="ref-meta">Buhârî, Rikak, 42; Megâzî, 83</div><pre>    &quot;Lâ ilâhe illâllah, muhakkak ki ölümün sarhoşlukları (şiddetleri) vardır.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Sekerâtü&#x27;l-Mevt: Kelime anlamı olarak &quot;ölüm sarhoşluğu&quot; veya &quot;ölüm baygınlığı&quot; demektir. Kişinin dünyadan ayrılırken hissettiği fiziksel ve ruhsal şiddetli halleri ifade eder.</li><li>Peygamberlerin Durumu: Hadis, en hayırlı kul olan Peygamber Efendimiz&#x27;in bile bu zorluğu yaşadığını göstererek, ölüm anındaki sıkıntıların günahlara kefaret olabileceğine veya manevi dereceyi yükselteceğine işaret eder.</li><li>Kur&#x27;an ile Bağlantısı: Hadiste geçen ifade, Kaf Suresi 19. ayetteki &quot;Ölüm sarhoşluğu (sekerâtü’l-mevt) bir gerçek olarak gelip çatmıştır&quot; beyanıyla tam bir uyum içindedir.</li></ul></aside>
+</article>
+<article id="112-dunya-hayatinin-sona-ermesi" class="subtopic">
+<div class="subtopic-head"><h4>1.1.2 Dünya hayatının sona ermesi</h4><button class="copy-link" data-link="#112-dunya-hayatinin-sona-ermesi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Ölümle birlikte insan için dünya hayatı tamamen sona erer ve imtihan süreci kapanır. Artık geri dönüş, tevbe veya amel etme imkânı yoktur. Kişi, kazandığı amellerle yeni ontolojik aşamaya geçer.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (3)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">ENBİYA 21:35</div><pre>        Her nefis ölümü tadacaktır. Bir imtihan olarak sizi hayırla da şerle de deneriz. Ve ancak bize döndürüleceksiniz.</pre></div><div class="ref-item"><div class="ref-meta">ANKebut 29:57</div><pre>        Her can ölümü tadacaktır. Sonra bize döndürüleceksiniz.</pre></div><div class="ref-item"><div class="ref-meta">MÜNAFİKUN 63:10-11</div><pre>        Sizden birine ölüm gelip de: &quot;Rabbim! Beni yakın bir süreye kadar geciktirsen de sadaka verip iyilerden olsam!&quot; demesinden önce, size verdiğimiz rızıktan infak edin.
+
+        Allah, eceli geldiğinde hiçbir kimseyi asla ertelemez. Allah yaptıklarınızdan haberdardır.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Müslim, Vasiyye, 14</div><pre>    &quot;İnsan öldüğü zaman amel defteri kapanır. Ancak üç şey bundan müstesnadır: Sadaka-i câriye, faydalanılan ilim ve kendisine dua eden hayırlı evlat.&quot;</pre></div><div class="ref-item"><div class="ref-meta">Tirmizî, Zühd, 3</div><pre>    &quot;Dünyada garip bir yolcu gibi ol.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Dünya-Ahiret Dengesi: Hadis, dünya hayatının geçici olduğunu ve asıl yurdun ahiret olduğunu vurgular.</li><li>Ontolojik Geçiş Bilinci: İnsan, dünyada kalıcı değil geçici olduğunu idrak ederek yaşamalıdır.</li><li>Ölüm Bilinci: Dünya hayatının sona ereceği kesin olduğu için, kişi hayatını buna göre anlamlandırmalıdır.</li></ul></aside>
+</article>
+</section>
+<section id="12-ruhun-kabzi-kabz-i-ruh" class="topic">
+<header class="topic-header"><h3>1.2 Ruhun Kabzı (Kabz-ı Ruh)</h3><p>Ölüm anında ruh, Allah’ın görevlendirdiği melekler tarafından bedenden alınır. Bu süreç, kişinin iman durumuna göre farklı şekillerde gerçekleşir ve ölüm tecrübesinin niteliğini belirler.</p></header>
+<article id="121-melekler-tarafindan-ruhun-alinmasi" class="subtopic">
+<div class="subtopic-head"><h4>1.2.1 Melekler tarafından ruhun alınması</h4><button class="copy-link" data-link="#121-melekler-tarafindan-ruhun-alinmasi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Ruhun alınması, İlahi düzen içinde görevli melekler vasıtasıyla gerçekleşir. Bu olay, insanın maddi âlemden ayrılıp metafizik boyuta geçişinin başlangıcıdır.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (3)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">SECDE 32:11</div><pre>        De ki: &quot;Size vekil kılınan ölüm meleği canınızı alacak, sonra Rabbinize döndürüleceksiniz.&quot;</pre></div><div class="ref-item"><div class="ref-meta">NAHL 16:28</div><pre>        Kendilerine zulmedenlerin canlarını melekler alırken: &quot;Biz hiçbir kötülük yapmıyorduk&quot; derler. Hayır! Allah sizin yaptıklarınızı bilendir.</pre></div><div class="ref-item"><div class="ref-meta">EN&#x27;AM 6:61</div><pre>        Nihayet sizden birine ölüm geldiğinde, elçilerimiz onun canını alırlar ve onlar görevlerinde kusur etmezler.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Ahmed b. Hanbel, Müsned, IV, 287</div><pre>    &quot;Kul dünyadan ayrılıp ahirete yöneldiği zaman gökten yüzleri güneş gibi parlak melekler iner...&quot;</pre></div><div class="ref-item"><div class="ref-meta">Berâ b. Âzib Hadisi</div><pre>    &quot;Melekler gelir, mümin kulun ruhunu güzel bir şekilde alır ve onu göğe yükseltirler...&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>İlahi Düzen: Ruhun alınması rastgele değil, belirlenmiş melekler aracılığıyla gerçekleşir.</li><li>Ontolojik Geçiş: Bu süreç, insanın fiziksel varlıktan metafizik varlığa geçişidir.</li><li>Meleklerin Rolü: Melekler, sadece ruhu almakla kalmaz, aynı zamanda sürecin ilk rehberleridir.</li></ul></aside>
+</article>
+<article id="122-mumin-ve-kafir-icin-farkli-tecrube" class="subtopic">
+<div class="subtopic-head"><h4>1.2.2 Mümin ve kafir için farklı tecrübe</h4><button class="copy-link" data-link="#122-mumin-ve-kafir-icin-farkli-tecrube">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Ruhun bedenden ayrılması, kişinin iman durumuna göre farklı şekillerde gerçekleşir. Mümin için bu süreç kolay ve huzurlu iken, inkâr edenler için zor ve acı vericidir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (3)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">NAHL 16:32</div><pre>        Melekler, iyi kimselerin canlarını alırken: &quot;Selam size! Yapmış olduğunuz iyi işlere karşılık cennete girin&quot; derler.</pre></div><div class="ref-item"><div class="ref-meta">ENFAL 8:50</div><pre>        Melekler, inkâr edenlerin yüzlerine ve arkalarına vurarak canlarını alırken hâllerini bir görseydin!</pre></div><div class="ref-item"><div class="ref-meta">MUHAMMED 47:27</div><pre>        Melekler onların yüzlerine ve arkalarına vurarak canlarını alırken halleri nasıl olacak?</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Ahmed b. Hanbel, Müsned</div><pre>    &quot;Müminin ruhu, su kabından damlanın akması gibi çıkar.&quot;</pre></div><div class="ref-item"><div class="ref-meta">Ebu Davud, Sünnet, 23</div><pre>    &quot;Kâfirin ruhu ise dikenli yün içinden çekilen şiş gibi çıkar.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Tecrübe Farklılığı: Ölüm tecrübesi, kişinin inanç ve yaşamına göre değişir.</li><li>Mümin için Kolaylık: Ruhun yumuşakça alınması, ilahi rahmetin bir göstergesidir.</li><li>Kafir için Zorluk: Ruhun zorla çekilmesi, ilahi adaletin bir tezahürüdür.</li><li>Ahlaki Sonuç: Dünya hayatındaki tercihlerin ölüm anındaki karşılığı ortaya çıkar.</li></ul></aside>
+</article>
+</section>
+<div class="chapter-next"><span>Sıradaki bölüm</span><a href="#2-berzah-sureci-kabir-hayati">2. Berzah Süreci (Kabir Hayatı)</a></div>
+</div></section><section id="2-berzah-sureci-kabir-hayati" class="chapter">
+<div class="chapter-shell">
+<div class="chapter-kicker">Bölüm 02</div>
+<header class="chapter-header">
+<div class="chapter-copy"><h2>2. Berzah Süreci (Kabir Hayatı)</h2><p>Berzah, ölüm ile yeniden diriliş arasındaki ara varlık düzlemidir. Bu süreçte insan, dünya ile ahiret arasında farklı bir ontolojik boyutta varlığını sürdürür ve bilinçli bir şekilde yeni durumunu tecrübe eder.</p></div>
+<aside class="chapter-media"><div class="media-placeholder"><span>İllüstrasyon / medya alanı</span><small>Bu bölüm için görsel sonradan eklenebilir.</small></div></aside>
+</header>
+<details class="diagram-card"><summary><div><strong>Berzah Yapısı</strong><p>Kabir hayatının ana bileşenleri.</p></div><span class="summary-tag">Diyagramı Aç</span></summary><div class="mermaid">flowchart TD
+A[Berzah] --&gt; B[Kabir]
+B --&gt; C[Şuurun devamı]
+B --&gt; D[Kabir sorgusu]
+D --&gt; E[Münker ve Nekir]
+B --&gt; F{Kabir durumu}
+F --&gt; G[Nimet]
+F --&gt; H[Azab]</div></details>
+<div class="chapter-overview"><div><h3>Bölüm haritası</h3><p>Bu bölümün alt başlıklarına hızlı geçiş.</p></div><ol><li><a href="#21-kabir-berzah-alemi">2.1 Kabir (Berzah Âlemi)<span>2 alt bölüm</span></a></li><li><a href="#22-kabir-sorgusu-imtihan-i-kabir">2.2 Kabir Sorgusu (İmtihan-ı Kabir)<span>2 alt bölüm</span></a></li><li><a href="#23-kabir-durumu">2.3 Kabir Durumu<span>2 alt bölüm</span></a></li></ol></div>
+<section id="21-kabir-berzah-alemi" class="topic">
+<header class="topic-header"><h3>2.1 Kabir (Berzah Âlemi)</h3><p>Kabir, sadece fiziksel bir mezar değil; aynı zamanda ruhun bulunduğu berzah boyutunun başlangıç noktasıdır.</p></header>
+<article id="211-ara-ontolojik-varlik-duzlemi" class="subtopic">
+<div class="subtopic-head"><h4>2.1.1 Ara ontolojik varlık düzlemi</h4><button class="copy-link" data-link="#211-ara-ontolojik-varlik-duzlemi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Berzah, dünya ile ahiret arasında bir geçiş âlemidir. Bu düzlemde zaman ve mekân algısı dünya şartlarından farklıdır.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">MÜMİNUN 23:100</div><pre>        Ta ki onlardan birine ölüm gelip çatınca: &quot;Rabbim! Beni geri gönder&quot; der. &quot;Belki terk ettiğim dünyada iyi işler yaparım.&quot; Hayır! Bu sadece onun söylediği bir sözdür. Önlerinde diriltilecekleri güne kadar bir berzah vardır.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Tirmizî, Zühd, 5</div><pre>    &quot;Kabir, ya cennet bahçelerinden bir bahçe ya da cehennem çukurlarından bir çukurdur.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Berzah Kavramı: Kabir, sadece fiziksel değil metafizik bir varlık alanıdır.</li><li>Ara Âlem: Dünya ile ahiret arasında bir bekleme ve geçiş sürecidir.</li><li>Sonucun Başlangıcı: Kabir, nihai sonucun ilk tecrübe edildiği yerdir.</li></ul></aside>
+</article>
+<article id="212-suurun-devami" class="subtopic">
+<div class="subtopic-head"><h4>2.1.2 Şuurun devamı</h4><button class="copy-link" data-link="#212-suurun-devami">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Ölümle birlikte bilinç yok olmaz; insan kabir hayatında idrak etmeye ve yaşadığı durumu hissetmeye devam eder.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">YASİN 36:26-27</div><pre>        Ona: &quot;Cennete gir!&quot; denildi. O da: &quot;Keşke kavmim bilseydi, Rabbimin beni bağışladığını ve beni ikram edilenlerden kıldığını!&quot; dedi.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Cenaiz, 66</div><pre>    &quot;Kabirdeki kişi, kendisini defnedenlerin ayak seslerini işitir.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Bilinç Devamlılığı: Ölüm, bilincin yok olması değil, farklı bir boyutta devam etmesidir.</li><li>İdrak: Kişi, kabirde olup biteni belirli ölçüde algılar.</li><li>Ruhsal Yaşam: Kabir hayatı aktif bir varoluş sürecidir.</li></ul></aside>
+</article>
+</section>
+<section id="22-kabir-sorgusu-imtihan-i-kabir" class="topic">
+<header class="topic-header"><h3>2.2 Kabir Sorgusu (İmtihan-ı Kabir)</h3><p>Kabirde insan, iman ve inanç esasları üzerinden sorgulanır. Bu sorgu, ahiret hayatının ilk imtihanıdır.</p></header>
+<article id="221-munker-ve-nekirin-sorulari" class="subtopic">
+<div class="subtopic-head"><h4>2.2.1 Münker ve Nekir’in soruları</h4><button class="copy-link" data-link="#221-munker-ve-nekirin-sorulari">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Kabirde görevli melekler (Münker ve Nekir), kişiye temel inanç soruları yöneltir.</p></div>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Ebu Davud, Sünnet, 23</div><pre>    &quot;Ölü kabre konulduğunda iki melek gelir ve ona: &#x27;Rabbin kim? Dinin nedir? Bu gönderilen kişi hakkında ne dersin?&#x27; diye sorarlar.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Temel Sorular: İman esasları üzerine sorular yöneltilir.</li><li>İlk İmtihan: Bu sorgu, ahiretteki hesabın başlangıcıdır.</li><li>Meleklerin Rolü: Münker ve Nekir sorgulayıcı görev üstlenir.</li></ul></aside>
+</article>
+<article id="222-inanc-temelli-cevaplar" class="subtopic">
+<div class="subtopic-head"><h4>2.2.2 İnanç temelli cevaplar</h4><button class="copy-link" data-link="#222-inanc-temelli-cevaplar">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Kişinin vereceği cevaplar, ezberden değil; dünya hayatındaki gerçek imanına dayanır.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">İBRAHİM 14:27</div><pre>        Allah, iman edenleri dünya hayatında da ahirette de sağlam söz üzerinde sabit kılar; zalimleri ise saptırır.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Ahmed b. Hanbel, Müsned</div><pre>    &quot;Mümin der ki: Rabbim Allah’tır, dinim İslam’dır, peygamberim Muhammed’dir.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>İman Temelli Cevap: Doğru cevaplar kalpteki imanın sonucudur.</li><li>Sabitlik: Allah, iman edenleri bu sorguda sabit kılar.</li><li>Ezber Değil Hakikat: Gerçek iman, bu aşamada ortaya çıkar.</li></ul></aside>
+</article>
+</section>
+<section id="23-kabir-durumu" class="topic">
+<header class="topic-header"><h3>2.3 Kabir Durumu</h3><p>Kabir hayatı, kişinin iman ve amellerine göre ya nimet ya da azap şeklinde tecrübe edilir.</p></header>
+<article id="231-kabir-nimeti-naim" class="subtopic">
+<div class="subtopic-head"><h4>2.3.1 Kabir nimeti (Naim)</h4><button class="copy-link" data-link="#231-kabir-nimeti-naim">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Müminler için kabir, huzur, genişlik ve nimetlerle dolu bir ortamdır.</p></div>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Tirmizî, Zühd, 5</div><pre>    &quot;Kabir, mümin için cennet bahçelerinden bir bahçedir.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Huzur: Mümin için kabir, rahatlık ve güven ortamıdır.</li><li>Nimet: Ahiret nimetlerinin ilk tecellisi burada başlar.</li><li>Geçiş Kolaylığı: Bu durum, ahiretteki kurtuluşun habercisidir.</li></ul></aside>
+</article>
+<article id="232-kabir-azabi-azab" class="subtopic">
+<div class="subtopic-head"><h4>2.3.2 Kabir azabı (Azab)</h4><button class="copy-link" data-link="#232-kabir-azabi-azab">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>İnkar edenler ve günahkârlar için kabir, azap ve sıkıntı yeridir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">MÜMİN 40:46</div><pre>        Onlar sabah akşam ateşe arz olunurlar. Kıyamet koptuğu gün ise: &quot;Firavun ailesini azabın en şiddetlisine sokun&quot; denir.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Cenaiz, 87</div><pre>    &quot;Kabirde bazı kimseler, idrar sıçrantısından sakınmadıkları ve dedikodu yaptıkları için azap görürler.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Azabın Başlangıcı: Kabir, azabın ilk aşamasıdır.</li><li>Amel Bağlantısı: Günahlar, kabir azabının sebebi olabilir.</li><li>Uyarı: Bu durum, dünya hayatında dikkatli olunması gerektiğini gösterir.</li></ul></aside>
+</article>
+</section>
+<div class="chapter-next"><span>Sıradaki bölüm</span><a href="#3-kozmik-kiyamet-sureci">3. Kozmik Kıyamet Süreci</a></div>
+</div></section><section id="3-kozmik-kiyamet-sureci" class="chapter">
+<div class="chapter-shell">
+<div class="chapter-kicker">Bölüm 03</div>
+<header class="chapter-header">
+<div class="chapter-copy"><h2>3. Kozmik Kıyamet Süreci</h2><p>Kıyamet, evrensel düzenin tamamen sona erdiği ve varlık sisteminin köklü bir dönüşüm geçirdiği kozmik olaydır. Bu süreç, dünya hayatının kesin olarak bitişini ve ahiret sürecinin başlamasını ifade eder.</p></div>
+<aside class="chapter-media"><div class="media-placeholder"><span>İllüstrasyon / medya alanı</span><small>Bu bölüm için görsel sonradan eklenebilir.</small></div></aside>
+</header>
+<div class="chapter-overview"><div><h3>Bölüm haritası</h3><p>Bu bölümün alt başlıklarına hızlı geçiş.</p></div><ol><li><a href="#31-kiyamet-es-saah">3.1 Kıyamet (Es-Sa’ah)<span>2 alt bölüm</span></a></li></ol></div>
+<section id="31-kiyamet-es-saah" class="topic">
+<header class="topic-header"><h3>3.1 Kıyamet (Es-Sa’ah)</h3><p>Kıyamet, Allah’ın emriyle gerçekleşecek olan büyük kozmik yıkım ve yeniden düzenlenme sürecidir.</p></header>
+<article id="311-sra-ilk-ufurus-yok-olus" class="subtopic">
+<div class="subtopic-head"><h4>3.1.1 Sûra ilk üfürüş (yok oluş)</h4><button class="copy-link" data-link="#311-sra-ilk-ufurus-yok-olus">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>İsrafil’in sûra ilk üfürüşüyle birlikte tüm canlılar ölür ve evrendeki düzen sona erer.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">ZÜMER 39:68</div><pre>        Sûra üfürülür; Allah’ın diledikleri hariç göklerde ve yerde kim varsa hepsi düşüp ölür. Sonra ona bir daha üfürülür; bir de bakarsın onlar ayağa kalkmış bakıyorlar.</pre></div><div class="ref-item"><div class="ref-meta">HÂKKA 69:13-16</div><pre>        Sûra bir tek üfürüşle üfürüldüğü zaman,
+        Yer ve dağlar yerinden kaldırılıp birbirine çarpılarak darmadağın edildiği zaman,
+        İşte o gün olacak olan olur.
+        Gök yarılır ve o gün o zayıflamıştır.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Müslim, Fiten, 27</div><pre>    &quot;İki üfürüş arasında kırk (zaman birimi) vardır.&quot;</pre></div><div class="ref-item"><div class="ref-meta">Buhari, Rikak, 39</div><pre>    &quot;Sûr’a üflemekle görevli melek, emri bekleyerek sûru ağzına götürmüş halde beklemektedir.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Sûr: Kıyametin başlangıcını ilan eden ilahi bir araçtır.</li><li>Evrensel Yok Oluş: İlk üfürüşle birlikte tüm canlı hayat sona erer.</li><li>İlahi Emir: Bu olay, tamamen Allah’ın iradesiyle gerçekleşir.</li></ul></aside>
+</article>
+<article id="312-kozmik-duzenin-cokusu" class="subtopic">
+<div class="subtopic-head"><h4>3.1.2 Kozmik düzenin çöküşü</h4><button class="copy-link" data-link="#312-kozmik-duzenin-cokusu">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Kıyametle birlikte evrenin mevcut düzeni bozulur; gökler yarılır, yıldızlar söner, dağlar yok olur.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (3)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">TEKVİR 81:1-6</div><pre>        Güneş dürülüp karardığı zaman,
+        Yıldızlar dökülüp söndüğü zaman,
+        Dağlar yürütüldüğü zaman,
+        Gebe develer başıboş bırakıldığı zaman,
+        Vahşi hayvanlar bir araya toplandığı zaman,
+        Denizler kaynatıldığı zaman,</pre></div><div class="ref-item"><div class="ref-meta">İNŞİKAK 84:1-3</div><pre>        Gök yarıldığı zaman,
+        Rabbine kulak verip boyun eğdiği zaman,
+        Yer dümdüz edildiği zaman,</pre></div><div class="ref-item"><div class="ref-meta">İNFiTAR 82:1-2</div><pre>        Gök yarıldığı zaman,
+        Yıldızlar dağılıp döküldüğü zaman,</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Tirmizî, Tefsir, 81</div><pre>    &quot;Kim kıyameti gözleriyle görmek isterse Tekvir sûresini okusun.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Kozmik Çöküş: Evrenin fiziksel düzeni tamamen bozulur.</li><li>İlahi Kudret: Bu olaylar, Allah’ın mutlak gücünü gösterir.</li><li>Kıyametin Tasviri: Kur’an, bu süreci güçlü sembollerle anlatır.</li><li>Farkındalık: İnsan, bu büyük sonu düşünerek hayatını anlamlandırmalıdır.</li></ul></aside>
+</article>
+</section>
+<div class="chapter-next"><span>Sıradaki bölüm</span><a href="#4-yeniden-yaratilis">4. Yeniden Yaratılış</a></div>
+</div></section><section id="4-yeniden-yaratilis" class="chapter">
+<div class="chapter-shell">
+<div class="chapter-kicker">Bölüm 04</div>
+<header class="chapter-header">
+<div class="chapter-copy"><h2>4. Yeniden Yaratılış</h2><p>Kıyametin ardından Allah, insanları yeniden yaratır ve diriltir. Bu süreç, ölümden sonraki ikinci varoluşu ifade eder ve ahiret hayatının başlangıcıdır.</p></div>
+<aside class="chapter-media"><div class="media-placeholder"><span>İllüstrasyon / medya alanı</span><small>Bu bölüm için görsel sonradan eklenebilir.</small></div></aside>
+</header>
+<div class="chapter-overview"><div><h3>Bölüm haritası</h3><p>Bu bölümün alt başlıklarına hızlı geçiş.</p></div><ol><li><a href="#41-dirilis-bas">4.1 Diriliş (Ba‘s)<span>2 alt bölüm</span></a></li></ol></div>
+<section id="41-dirilis-bas" class="topic">
+<header class="topic-header"><h3>4.1 Diriliş (Ba‘s)</h3><p>Ba‘s, ölülerin yeniden diriltilmesi ve ahiret hayatı için ayağa kaldırılmasıdır.</p></header>
+<article id="411-beden-ve-ruhun-yeniden-birlesmesi" class="subtopic">
+<div class="subtopic-head"><h4>4.1.1 Beden ve ruhun yeniden birleşmesi</h4><button class="copy-link" data-link="#411-beden-ve-ruhun-yeniden-birlesmesi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>İnsan, sadece ruhsal değil; beden ve ruh birlikte yeniden yaratılarak diriltilir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">YASİN 36:78-79</div><pre>        Kendi yaratılışını unutarak bize bir örnek verdi: &quot;Çürümüş kemikleri kim diriltecek?&quot; dedi.
+
+        De ki: &quot;Onları ilk defa yaratan diriltecek. O, her yaratmayı hakkıyla bilendir.&quot;</pre></div><div class="ref-item"><div class="ref-meta">KIYAME 75:3-4</div><pre>        İnsan, kemiklerini bir araya toplayamayacağımızı mı sanıyor?
+
+        Evet, biz onun parmak uçlarını bile aynen eski haline getirmeye kadiriz.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Tefsir, 39</div><pre>    &quot;İnsanoğlunun her parçası çürür, ancak &#x27;acbü’z-zeneb&#x27; (kuyruk sokumu kemiği) çürümez. Diriliş ondan yeniden başlatılır.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Fiziksel Diriliş: Diriliş sadece ruhsal değil, bedensel olarak da gerçekleşir.</li><li>İlahi Kudret: Allah, en küçük parçayı bile yeniden yaratmaya kadirdir.</li><li>Süreklilik: İnsan kimliği korunarak yeniden var edilir.</li></ul></aside>
+</article>
+<article id="412-kabirlerden-cikis" class="subtopic">
+<div class="subtopic-head"><h4>4.1.2 Kabirlerden çıkış</h4><button class="copy-link" data-link="#412-kabirlerden-cikis">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Dirilişten sonra insanlar kabirlerinden çıkarak mahşer yerine doğru yönelir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (3)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">ZİLZAL 99:6</div><pre>        O gün insanlar amellerini görmek için bölük bölük kabirlerinden çıkarlar.</pre></div><div class="ref-item"><div class="ref-meta">HAC 22:7</div><pre>        Kıyamet mutlaka gelecektir, bunda şüphe yoktur. Allah kabirlerde olanları diriltip çıkaracaktır.</pre></div><div class="ref-item"><div class="ref-meta">KAMER 54:7</div><pre>        Gözleri düşük bir halde kabirlerinden çıkarlar; sanki yayılmış çekirgeler gibidirler.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Rikak, 44</div><pre>    &quot;İnsanlar kıyamet günü yalın ayak, çıplak ve sünnetsiz olarak diriltileceklerdir.&quot;</pre></div><div class="ref-item"><div class="ref-meta">Müslim, Cennet, 56</div><pre>    &quot;İnsanlar kabirlerinden kalkıp Rablerine doğru koşarlar.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Evrensel Diriliş: Tüm insanlar aynı anda diriltilir.</li><li>Eşitlik: Dünya statüleri ortadan kalkar, herkes aynı durumda olur.</li><li>Hesap Süreci Başlangıcı: Kabirden çıkış, mahşer ve hesap sürecinin başlangıcıdır.</li></ul></aside>
+</article>
+</section>
+<div class="chapter-next"><span>Sıradaki bölüm</span><a href="#5-toplanma-ve-bekleyis">5. Toplanma ve Bekleyiş</a></div>
+</div></section><section id="5-toplanma-ve-bekleyis" class="chapter">
+<div class="chapter-shell">
+<div class="chapter-kicker">Bölüm 05</div>
+<header class="chapter-header">
+<div class="chapter-copy"><h2>5. Toplanma ve Bekleyiş</h2><p>Dirilişten sonra tüm insanlar mahşer alanında toplanır ve ilahi yargılama öncesinde bekleme sürecine girerler. Bu aşama, insanlığın ortak ve evrensel bir deneyim yaşadığı kritik bir safhadır.</p></div>
+<aside class="chapter-media"><div class="media-placeholder"><span>İllüstrasyon / medya alanı</span><small>Bu bölüm için görsel sonradan eklenebilir.</small></div></aside>
+</header>
+<div class="chapter-overview"><div><h3>Bölüm haritası</h3><p>Bu bölümün alt başlıklarına hızlı geçiş.</p></div><ol><li><a href="#51-hasr-mahser-toplanma">5.1 Haşr / Mahşer (Toplanma)<span>2 alt bölüm</span></a></li><li><a href="#52-vakfe-bekleyis">5.2 Vakfe (Bekleyiş)<span>2 alt bölüm</span></a></li></ol></div>
+<section id="51-hasr-mahser-toplanma" class="topic">
+<header class="topic-header"><h3>5.1 Haşr / Mahşer (Toplanma)</h3><p>Haşr, diriltilen tüm insanların bir araya getirilerek hesap için toplanmasıdır.</p></header>
+<article id="511-tum-insanlarin-bir-araya-gelmesi" class="subtopic">
+<div class="subtopic-head"><h4>5.1.1 Tüm insanların bir araya gelmesi</h4><button class="copy-link" data-link="#511-tum-insanlarin-bir-araya-gelmesi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>İnsanlık tarihindeki tüm bireyler aynı anda mahşer alanında toplanır.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (3)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">KEHF 18:47</div><pre>        O gün dağları yürütürüz ve yeryüzünü dümdüz görürsün. Onları bir araya toplarız da içlerinden hiçbirini bırakmayız.</pre></div><div class="ref-item"><div class="ref-meta">TEĞABUN 64:9</div><pre>        Toplanma günü, işte o gün aldanmanın ortaya çıkacağı gündür.</pre></div><div class="ref-item"><div class="ref-meta">YASİN 36:53</div><pre>        Sadece bir sayha olur; hepsi huzurumuzda toplanmış bulunurlar.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Rikak, 44</div><pre>    &quot;İnsanlar kıyamet günü yalın ayak, çıplak ve sünnetsiz olarak haşrolunacaklardır.&quot;</pre></div><div class="ref-item"><div class="ref-meta">Müslim, Cennet, 56</div><pre>    &quot;İnsanlar Rablerinin huzurunda toplanırlar.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Evrensel Toplanma: Tüm insanlar eksiksiz şekilde bir araya getirilir.</li><li>Kaçış Yok: Hiç kimse bu toplanmadan muaf değildir.</li><li>İlahi Kudret: Bu olay, Allah’ın mutlak gücünü gösterir.</li></ul></aside>
+</article>
+<article id="512-evrensel-esitlik-durumu" class="subtopic">
+<div class="subtopic-head"><h4>5.1.2 Evrensel eşitlik durumu</h4><button class="copy-link" data-link="#512-evrensel-esitlik-durumu">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Mahşerde insanlar arasında dünyevi farklar ortadan kalkar; herkes eşit bir konumda bulunur.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">EN&#x27;AM 6:94</div><pre>        Andolsun ki sizi ilk yarattığımız gibi bize tek başınıza geldiniz...</pre></div><div class="ref-item"><div class="ref-meta">MERYEM 19:95</div><pre>        Hepsi kıyamet günü O’na tek başına gelecektir.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Rikak, 44</div><pre>    &quot;İnsanlar çıplak ve yalın olarak diriltileceklerdir.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Eşitlik: Zenginlik, makam ve güç gibi farklar ortadan kalkar.</li><li>Bireysellik: Herkes kendi ameliyle baş başadır.</li><li>Adalet Zemini: Bu eşitlik, ilahi yargının adil gerçekleşmesini sağlar.</li></ul></aside>
+</article>
+</section>
+<section id="52-vakfe-bekleyis" class="topic">
+<header class="topic-header"><h3>5.2 Vakfe (Bekleyiş)</h3><p>Mahşerde insanlar, hesap başlamadan önce uzun ve zorlu bir bekleyiş sürecine girerler.</p></header>
+<article id="521-hesap-oncesi-bekleme" class="subtopic">
+<div class="subtopic-head"><h4>5.2.1 Hesap öncesi bekleme</h4><button class="copy-link" data-link="#521-hesap-oncesi-bekleme">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>İnsanlar, ilahi yargılama başlamadan önce belirli bir süre bekletilir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">GAŞİYE 88:1-4</div><pre>        O dehşetli günün haberi sana geldi mi?
+
+        O gün birtakım yüzler zillete düşmüştür.
+
+        Çalışmış, yorulmuştur.
+
+        Kızgın bir ateşe girer.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Müslim, Zühd, 60</div><pre>    &quot;İnsanlar, amellerine göre ter içinde kalırlar.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Bekleyiş: Hesap öncesi uzun bir süre söz konusudur.</li><li>Gerilim: İnsanlar sonucu beklerken büyük bir endişe yaşar.</li><li>Hazırlık: Bu süreç, ilahi yargıya geçişin ön aşamasıdır.</li></ul></aside>
+</article>
+<article id="522-zorluk-ve-belirsizlik-sureci" class="subtopic">
+<div class="subtopic-head"><h4>5.2.2 Zorluk ve belirsizlik süreci</h4><button class="copy-link" data-link="#522-zorluk-ve-belirsizlik-sureci">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Bekleyiş süreci fiziksel ve psikolojik olarak zorludur; insanlar büyük bir korku ve belirsizlik yaşar.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">İBRAHİM 14:42</div><pre>        Sakın Allah’ı zalimlerin yaptıklarından habersiz sanma. O, onları gözlerin dehşetten donakalacağı bir güne erteliyor.</pre></div><div class="ref-item"><div class="ref-meta">MEARİC 70:4</div><pre>        Melekler ve Ruh, miktarı elli bin yıl olan bir günde O’na yükselir.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Rikak, 47</div><pre>    &quot;Güneş insanlara yaklaşır ve insanlar amellerine göre terler içinde kalırlar.&quot;</pre></div><div class="ref-item"><div class="ref-meta">Müslim, Cennet, 60</div><pre>    &quot;Kimi topuklarına, kimi dizlerine, kimi de ağzına kadar ter içinde kalır.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Fiziksel Zorluk: Sıcaklık ve bekleyiş insanları zorlar.</li><li>Psikolojik Baskı: Belirsizlik büyük bir korku oluşturur.</li><li>Amel Etkisi: Herkes, dünyadaki ameline göre farklı derecede zorluk yaşar.</li></ul></aside>
+</article>
+</section>
+<div class="chapter-next"><span>Sıradaki bölüm</span><a href="#6-ilahi-yargilama-sureci">6. İlahi Yargılama Süreci</a></div>
+</div></section><section id="6-ilahi-yargilama-sureci" class="chapter">
+<div class="chapter-shell">
+<div class="chapter-kicker">Bölüm 06</div>
+<header class="chapter-header">
+<div class="chapter-copy"><h2>6. İlahi Yargılama Süreci</h2><p>Mahşerde toplanan insanlar, ilahi adaletin tecelli edeceği yargılama sürecine girerler. Bu süreçte her birey, dünya hayatındaki amelleri ve niyetleri doğrultusunda değerlendirilir.</p></div>
+<aside class="chapter-media"><div class="media-placeholder"><span>İllüstrasyon / medya alanı</span><small>Bu bölüm için görsel sonradan eklenebilir.</small></div></aside>
+</header>
+<details class="diagram-card"><summary><div><strong>İlahi Yargılama Akışı</strong><p>Mahşerden sonraki hesap sürecinin ana aşamaları.</p></div><span class="summary-tag">Diyagramı Aç</span></summary><div class="mermaid">flowchart LR
+A[Toplanma] --&gt; B[Amel Defteri]
+B --&gt; C[Hisab]
+C --&gt; D[Mizan]
+D --&gt; E{Durum}
+E --&gt;|Arınma / bekleyiş| F[A&#x27;râf veya geçiş]
+E --&gt;|Kurtuluş| G[Sırat sonrası rahmet]
+E --&gt;|Azap| H[Cehennem yönelişi]</div></details>
+<div class="chapter-overview"><div><h3>Bölüm haritası</h3><p>Bu bölümün alt başlıklarına hızlı geçiş.</p></div><ol><li><a href="#61-amel-defteri-kitab">6.1 Amel Defteri (Kitâb)<span>2 alt bölüm</span></a></li><li><a href="#62-hisab-hesap">6.2 Hisab (Hesap)<span>2 alt bölüm</span></a></li><li><a href="#63-mizan-ahlaki-tarti">6.3 Mizan (Ahlaki Tartı)<span>2 alt bölüm</span></a></li></ol></div>
+<section id="61-amel-defteri-kitab" class="topic">
+<header class="topic-header"><h3>6.1 Amel Defteri (Kitâb)</h3><p>Her insanın dünya hayatındaki tüm fiilleri kayıt altına alınmış olup, bu kayıtlar kendisine sunulur.</p></header>
+<article id="611-sagdan-verilmesi-kurtulus" class="subtopic">
+<div class="subtopic-head"><h4>6.1.1 Sağdan verilmesi (kurtuluş)</h4><button class="copy-link" data-link="#611-sagdan-verilmesi-kurtulus">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Amel defterini sağ tarafından alanlar kurtuluşa erenlerdir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">HÂKKA 69:19-20</div><pre>        Kitabı sağ tarafından verilen kimse der ki: &quot;Alın, kitabımı okuyun!
+
+        Doğrusu ben hesabımla karşılaşacağımı zaten biliyordum.&quot;</pre></div><div class="ref-item"><div class="ref-meta">İNŞİKAK 84:7-8</div><pre>        Kitabı sağ tarafından verilen kimse kolay bir hesaba çekilecek,</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Rikak, 49</div><pre>    &quot;Kimin hesabı kolay görülürse o kurtulmuştur.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Kurtuluş: Sağdan verilen amel defteri, ilahi rahmetin göstergesidir.</li><li>Kolay Hesap: Müminler için hesap hafif ve kolaydır.</li><li>Bilinç: Kişi, dünyadayken bu günle karşılaşacağını bilir.</li></ul></aside>
+</article>
+<article id="612-soldan-verilmesi-azap" class="subtopic">
+<div class="subtopic-head"><h4>6.1.2 Soldan verilmesi (azap)</h4><button class="copy-link" data-link="#612-soldan-verilmesi-azap">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Amel defterini sol tarafından alanlar hüsrana uğrayanlardır.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">HÂKKA 69:25-27</div><pre>        Kitabı sol tarafından verilen ise der ki: &quot;Keşke kitabım bana verilmeseydi!
+
+        Hesabımın ne olduğunu bilmeseydim!
+
+        Keşke ölüm her şeyi bitirseydi!&quot;</pre></div><div class="ref-item"><div class="ref-meta">İNŞİKAK 84:10-12</div><pre>        Kitabı arkasından verilen kimse ise helak çağırır,
+        Alevli ateşe girer.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Müslim, Zühd, 51</div><pre>    &quot;Kulun günahları kendisine gösterilir ve o onları itiraf eder.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Hüsran: Sol taraftan verilen amel defteri, azabın habercisidir.</li><li>Pişmanlık: Kişi, yaptığı amellerden dolayı büyük bir pişmanlık yaşar.</li><li>Adalet: Hiçbir amel gizli kalmaz.</li></ul></aside>
+</article>
+</section>
+<section id="62-hisab-hesap" class="topic">
+<header class="topic-header"><h3>6.2 Hisab (Hesap)</h3><p>İnsanların tüm amelleri ve niyetleri detaylı şekilde değerlendirilir.</p></header>
+<article id="621-amellerin-sorgulanmasi" class="subtopic">
+<div class="subtopic-head"><h4>6.2.1 Amellerin sorgulanması</h4><button class="copy-link" data-link="#621-amellerin-sorgulanmasi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Kişinin yaptığı her davranış, küçük ya da büyük fark etmeksizin hesaba çekilir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">ZİLZAL 99:7-8</div><pre>        Kim zerre kadar hayır yapmışsa onu görür.
+
+        Kim de zerre kadar kötülük yapmışsa onu görür.</pre></div><div class="ref-item"><div class="ref-meta">KAF 50:17-18</div><pre>        Sağında ve solunda oturan iki melek, her yaptığını kaydetmektedir.
+
+        Ağzından çıkan hiçbir söz yoktur ki yanında hazır bir gözetleyici bulunmasın.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Tirmizî, Kıyamet, 1</div><pre>    &quot;Kul kıyamet günü dört şeyden sorgulanmadıkça yerinden ayrılmaz...&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Kapsamlı Hesap: Tüm ameller detaylı şekilde incelenir.</li><li>Sorumluluk: İnsan, hayatının her anından sorumludur.</li><li>İlahi Kayıt: Hiçbir davranış kayıtsız kalmaz.</li></ul></aside>
+</article>
+<article id="622-niyetlerin-degerlendirilmesi" class="subtopic">
+<div class="subtopic-head"><h4>6.2.2 Niyetlerin değerlendirilmesi</h4><button class="copy-link" data-link="#622-niyetlerin-degerlendirilmesi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Amellerin değeri, niyetlere göre belirlenir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">BEYYİNE 98:5</div><pre>        Oysa onlar, dini yalnız Allah’a has kılarak O’na kulluk etmekten başka bir şeyle emrolunmamışlardı.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Bed’ü’l-Vahy, 1</div><pre>    &quot;Ameller niyetlere göredir ve herkes için ancak niyet ettiği vardır.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Niyetin Önemi: Amelin değeri niyete bağlıdır.</li><li>İçsel Boyut: Sadece dış eylem değil, iç motivasyon da değerlendirilir.</li><li>Samimiyet: İhlas, kurtuluşun temel unsurlarındandır.</li></ul></aside>
+</article>
+</section>
+<section id="63-mizan-ahlaki-tarti" class="topic">
+<header class="topic-header"><h3>6.3 Mizan (Ahlaki Tartı)</h3><p>Ameller, ilahi adalet terazisinde tartılır.</p></header>
+<article id="631-iyiliklerin-tartilmasi" class="subtopic">
+<div class="subtopic-head"><h4>6.3.1 İyiliklerin tartılması</h4><button class="copy-link" data-link="#631-iyiliklerin-tartilmasi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>İyilikler mizanda ağır gelenler kurtuluşa erer.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">ARAF 7:8</div><pre>        O gün tartı haktır. Kimin tartıları ağır gelirse işte onlar kurtuluşa erenlerdir.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Tirmizî, İman, 9</div><pre>    &quot;Kıyamet gününde mizanda güzel ahlaktan daha ağır bir şey yoktur.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>İyiliklerin Ağırlığı: Salih ameller kurtuluşun anahtarıdır.</li><li>Ahlak: Güzel ahlak mizanda büyük değer taşır.</li><li>Başarı: Ağır gelen iyilikler ebedi kurtuluşu sağlar.</li></ul></aside>
+</article>
+<article id="632-kotuluklerin-tartilmasi" class="subtopic">
+<div class="subtopic-head"><h4>6.3.2 Kötülüklerin tartılması</h4><button class="copy-link" data-link="#632-kotuluklerin-tartilmasi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Kötülükleri ağır basanlar hüsrana uğrar.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">ARAF 7:9</div><pre>        Kimin tartıları hafif gelirse, işte onlar kendilerine zulmettikleri için hüsrana uğrayanlardır.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Müslim, Birr, 32</div><pre>    &quot;Müflis, kıyamet günü sevapları başkalarına dağıtılan kimsedir.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Kayıp: Kötülüklerin ağır basması hüsran getirir.</li><li>Hak İhlali: Kul hakları mizanda büyük etkiye sahiptir.</li><li>Adalet: İlahi tartı, mutlak adaletle gerçekleşir.</li></ul></aside>
+</article>
+</section>
+<div class="chapter-next"><span>Sıradaki bölüm</span><a href="#7-ara-durum">7. Ara Durum</a></div>
+</div></section><section id="7-ara-durum" class="chapter">
+<div class="chapter-shell">
+<div class="chapter-kicker">Bölüm 07</div>
+<header class="chapter-header">
+<div class="chapter-copy"><h2>7. Ara Durum</h2><p>Bazı kimseler için nihai hüküm hemen verilmez. Amelleri birbirine yakın olanlar, cennet ve cehennem arasında özel bir bekleme alanında tutulurlar. Bu ara durum, ilahi adaletin hassas dengesini yansıtır.</p></div>
+<aside class="chapter-media"><div class="media-placeholder"><span>İllüstrasyon / medya alanı</span><small>Bu bölüm için görsel sonradan eklenebilir.</small></div></aside>
+</header>
+<div class="chapter-overview"><div><h3>Bölüm haritası</h3><p>Bu bölümün alt başlıklarına hızlı geçiş.</p></div><ol><li><a href="#71-araf-bekleme-alani">7.1 A‘râf (Bekleme Alanı)<span>2 alt bölüm</span></a></li></ol></div>
+<section id="71-araf-bekleme-alani" class="topic">
+<header class="topic-header"><h3>7.1 A‘râf (Bekleme Alanı)</h3><p>A‘râf, cennet ile cehennem arasında bulunan ve amelleri dengede olanların geçici olarak bulunduğu bir ara bölgedir.</p></header>
+<article id="711-amelleri-dengede-olanlar" class="subtopic">
+<div class="subtopic-head"><h4>7.1.1 Amelleri dengede olanlar</h4><button class="copy-link" data-link="#711-amelleri-dengede-olanlar">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>İyilik ve kötülükleri birbirine eşit olan kişiler bu bölgede bekletilir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">ARAF 7:46</div><pre>        İkisi (cennet ve cehennem) arasında bir perde vardır. A‘râf üzerinde de herkesi simalarından tanıyan adamlar vardır...</pre></div><div class="ref-item"><div class="ref-meta">ARAF 7:47</div><pre>        Gözleri cehennem ehline çevrildiğinde: &quot;Rabbimiz! Bizi zalimler topluluğu ile beraber kılma!&quot; derler.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">(Doğrudan açık ve sahih hadis rivayeti sınırlıdır; konu daha çok ayet temellidir.)</div><pre></pre></div><div class="ref-item"><div class="ref-meta">Açıklama</div><pre>        Kur’an Merkezli Kavram: A‘râf konusu doğrudan Kur’an’da detaylandırılmıştır.
+
+        Denge Durumu: Amellerin eşit olması bu ara konumu doğurur.
+
+        Tanıma Yetisi: A‘râf ehli, insanları simalarından tanıyabilir.</pre></div></div></details>
+</article>
+<article id="712-gecici-bekleyis" class="subtopic">
+<div class="subtopic-head"><h4>7.1.2 Geçici bekleyiş</h4><button class="copy-link" data-link="#712-gecici-bekleyis">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>A‘râf ehlinin durumu kalıcı değildir; ilahi hüküm sonrası nihai varış yerleri belirlenir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">ARAF 7:48-49</div><pre>        A‘râf ehli, birtakım adamlara seslenerek: &quot;Topladığınız şeyler ve büyüklük taslamanız size fayda vermedi&quot; derler.
+
+        &quot;Allah’ın rahmetine eremez&quot; diye yemin ettiğiniz kimseler bunlar mıydı? (Onlara denir ki:) &quot;Girin cennete, size korku yoktur ve üzülmeyeceksiniz.&quot;</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">(Bu aşamanın detayları daha çok tefsirlerde ele alınmıştır.)</div><pre></pre></div><div class="ref-item"><div class="ref-meta">Açıklama</div><pre>        Geçicilik: A‘râf, kalıcı bir makam değil geçici bir bekleme alanıdır.
+
+        İlahi Rahmet: Sonuçta birçok kişinin rahmetle cennete dahil edilmesi mümkündür.
+
+        Umut ve Korku Dengesi: Bu süreç, hem endişe hem umut barındırır.</pre></div></div></details>
+</article>
+</section>
+<div class="chapter-next"><span>Sıradaki bölüm</span><a href="#8-arinma-ve-gecis">8. Arınma ve Geçiş</a></div>
+</div></section><section id="8-arinma-ve-gecis" class="chapter">
+<div class="chapter-shell">
+<div class="chapter-kicker">Bölüm 08</div>
+<header class="chapter-header">
+<div class="chapter-copy"><h2>8. Arınma ve Geçiş</h2><p>İlahi yargılama sürecinden sonra müminler için arınma ve nihai geçiş aşaması başlar. Bu süreçte insanlar, cennete ulaşmadan önce bazı duraklardan geçerler.</p></div>
+<aside class="chapter-media"><div class="media-placeholder"><span>İllüstrasyon / medya alanı</span><small>Bu bölüm için görsel sonradan eklenebilir.</small></div></aside>
+</header>
+<div class="chapter-overview"><div><h3>Bölüm haritası</h3><p>Bu bölümün alt başlıklarına hızlı geçiş.</p></div><ol><li><a href="#81-kevser-havuzu">8.1 Kevser Havuzu<span>2 alt bölüm</span></a></li><li><a href="#82-sirat-koprusu">8.2 Sırat Köprüsü<span>2 alt bölüm</span></a></li></ol></div>
+<section id="81-kevser-havuzu" class="topic">
+<header class="topic-header"><h3>8.1 Kevser Havuzu</h3><p>Kevser Havuzu, Peygamber Efendimiz’e verilen özel bir nimet olup müminlerin mahşer sonrası susuzluklarını giderecekleri kutsal bir kaynaktır.</p></header>
+<article id="811-muminlerin-su-icmesi" class="subtopic">
+<div class="subtopic-head"><h4>8.1.1 Müminlerin su içmesi</h4><button class="copy-link" data-link="#811-muminlerin-su-icmesi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Müminler Kevser Havuzu’ndan içerek büyük bir ferahlık ve nimet elde ederler.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">KEVSER 108:1</div><pre>        Şüphesiz biz sana Kevser’i verdik.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Rikak, 53</div><pre>    &quot;Benim havuzum (Kevser), bir aylık mesafe kadardır. Suyu sütten daha beyaz, kokusu miskten daha güzeldir.&quot;</pre></div><div class="ref-item"><div class="ref-meta">Müslim, Fezail, 37</div><pre>    &quot;Kim ondan bir kere içerse artık ebediyen susamaz.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>İlahi İkram: Kevser, Peygamber’e ve ümmetine özel bir nimettir.</li><li>Ebedi Ferahlık: Bu sudan içenler bir daha susuzluk çekmez.</li><li>Ayrıcalık: Bu nimet, iman edenlere mahsustur.</li></ul></aside>
+</article>
+<article id="812-susuzlugun-giderilmesi" class="subtopic">
+<div class="subtopic-head"><h4>8.1.2 Susuzluğun giderilmesi</h4><button class="copy-link" data-link="#812-susuzlugun-giderilmesi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Mahşerin zorlu bekleyişinden sonra Kevser Havuzu, müminler için büyük bir rahatlama sağlar.</p></div>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Tirmizî, Kıyamet, 15</div><pre>    &quot;Havuzumun kapları gökteki yıldızlar kadardır.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Rahatlama: Mahşerin zorluğundan sonra büyük bir huzur sağlar.</li><li>Bolluk: Havuzun nimetleri sınırsızdır.</li><li>Hazırlık: Bu aşama, cennete geçiş öncesi bir arınma sürecidir.</li></ul></aside>
+</article>
+</section>
+<section id="82-sirat-koprusu" class="topic">
+<header class="topic-header"><h3>8.2 Sırat Köprüsü</h3><p>Sırat, cehennemin üzerine kurulu olan ve tüm insanların geçmek zorunda olduğu nihai geçiş yoludur.</p></header>
+<article id="821-nihai-gecis-yolu" class="subtopic">
+<div class="subtopic-head"><h4>8.2.1 Nihai geçiş yolu</h4><button class="copy-link" data-link="#821-nihai-gecis-yolu">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Herkes Sırat Köprüsü’nden geçmek zorundadır; bu, cennete ulaşmanın son aşamasıdır.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">MERYEM 19:71</div><pre>        İçinizden oraya (cehenneme) uğramayacak hiç kimse yoktur. Bu, Rabbinin kesinleşmiş bir hükmüdür.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Rikak, 52</div><pre>    &quot;Sırat, cehennemin üzerine kurulmuştur.&quot;</pre></div><div class="ref-item"><div class="ref-meta">Müslim, İman, 329</div><pre>    &quot;İnsanlar Sırat’tan amellerine göre geçerler.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Evrensellik: Herkes bu köprüden geçmek zorundadır.</li><li>Nihai Aşama: Bu geçiş, cennet öncesi son sınavdır.</li><li>İlahi Adalet: Geçiş süreci amellere göre belirlenir.</li></ul></aside>
+</article>
+<article id="822-amellere-gore-gecis-hizi" class="subtopic">
+<div class="subtopic-head"><h4>8.2.2 Amellere göre geçiş hızı</h4><button class="copy-link" data-link="#822-amellere-gore-gecis-hizi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>İnsanlar Sırat’tan farklı hızlarda geçerler; bu hız, dünya hayatındaki amellerine bağlıdır.</p></div>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Rikak, 52</div><pre>    &quot;Kimi göz açıp kapayıncaya kadar, kimi rüzgar gibi, kimi koşarak geçer...&quot;</pre></div><div class="ref-item"><div class="ref-meta">Müslim, İman, 329</div><pre>    &quot;Bazıları sürünerek geçer, bazıları ise düşer.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Amel Etkisi: Geçiş hızı doğrudan amellere bağlıdır.</li><li>Risk: Bazıları geçemez ve düşer.</li><li>Kurtuluş: Hızlı ve güvenli geçiş, salih amellerin sonucudur.</li></ul></aside>
+</article>
+</section>
+<div class="chapter-next"><span>Sıradaki bölüm</span><a href="#9-ilahi-rahmet-mekanizmasi">9. İlahi Rahmet Mekanizması</a></div>
+</div></section><section id="9-ilahi-rahmet-mekanizmasi" class="chapter">
+<div class="chapter-shell">
+<div class="chapter-kicker">Bölüm 09</div>
+<header class="chapter-header">
+<div class="chapter-copy"><h2>9. İlahi Rahmet Mekanizması</h2><p>İlahi adaletin yanında, Allah’ın rahmeti de ahiret sürecinde tecelli eder. Bu rahmetin en önemli tezahürlerinden biri şefaattir.</p></div>
+<aside class="chapter-media"><div class="media-placeholder"><span>İllüstrasyon / medya alanı</span><small>Bu bölüm için görsel sonradan eklenebilir.</small></div></aside>
+</header>
+<div class="chapter-overview"><div><h3>Bölüm haritası</h3><p>Bu bölümün alt başlıklarına hızlı geçiş.</p></div><ol><li><a href="#91-sefaat">9.1 Şefaat<span>2 alt bölüm</span></a></li></ol></div>
+<section id="91-sefaat" class="topic">
+<header class="topic-header"><h3>9.1 Şefaat</h3><p>Şefaat, Allah’ın izniyle bazı kulların diğer kullar için bağışlanma talebinde bulunmasıdır.</p></header>
+<article id="911-peygamberlerin-sefaati" class="subtopic">
+<div class="subtopic-head"><h4>9.1.1 Peygamberlerin şefaati</h4><button class="copy-link" data-link="#911-peygamberlerin-sefaati">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Peygamberler, özellikle de Hz. Muhammed (s.a.v.), ümmetleri için şefaat edeceklerdir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">İSRA 17:79</div><pre>        Gecenin bir kısmında sana mahsus olmak üzere teheccüd namazı kıl. Umulur ki Rabbin seni Makam-ı Mahmud’a ulaştırır.</pre></div><div class="ref-item"><div class="ref-meta">DUHA 93:5</div><pre>        Rabbin sana verecek ve sen hoşnut olacaksın.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Rikak, 51</div><pre>    &quot;Her peygamberin kabul edilmiş bir duası vardır. Ben duamı kıyamet günü ümmetime şefaat için sakladım.&quot;</pre></div><div class="ref-item"><div class="ref-meta">Müslim, İman, 327</div><pre>    &quot;Şefaatim, ümmetimden büyük günah sahipleri içindir.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Makam-ı Mahmud: Peygamber Efendimiz’e verilen en yüce makamdır.</li><li>Şefaat Yetkisi: Peygamberler, Allah’ın izniyle şefaat ederler.</li><li>Ümmet Bilinci: Hz. Muhammed’in ümmetine olan merhameti vurgulanır.</li></ul></aside>
+</article>
+<article id="912-allahin-izniyle-gerceklesmesi" class="subtopic">
+<div class="subtopic-head"><h4>9.1.2 Allah’ın izniyle gerçekleşmesi</h4><button class="copy-link" data-link="#912-allahin-izniyle-gerceklesmesi">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Şefaat, bağımsız bir güç değildir; yalnızca Allah’ın izni ve rızası ile gerçekleşir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">BAKARA 2:255</div><pre>        O’nun izni olmadan katında kim şefaat edebilir?</pre></div><div class="ref-item"><div class="ref-meta">NECM 53:26</div><pre>        Göklerde nice melekler vardır ki, onların şefaati hiçbir fayda vermez; ancak Allah’ın dilediği ve razı olduğu kimseler için izin verdikten sonra başka.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Tevhid, 24</div><pre>    &quot;Ben Rabbimin huzurunda secdeye kapanırım, bana izin verilince şefaat ederim.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Mutlak Otorite: Şefaat tamamen Allah’ın iznine bağlıdır.</li><li>Bağımsızlık Yok: Hiç kimse kendi başına şefaat edemez.</li><li>İlahi Rahmet: Şefaat, Allah’ın kullarına olan merhametinin bir sonucudur.</li></ul></aside>
+</article>
+</section>
+<div class="chapter-next"><span>Sıradaki bölüm</span><a href="#10-nihai-sonuc-ebediyet">10. Nihai Sonuç (Ebediyet)</a></div>
+</div></section><section id="10-nihai-sonuc-ebediyet" class="chapter">
+<div class="chapter-shell">
+<div class="chapter-kicker">Bölüm 10</div>
+<header class="chapter-header">
+<div class="chapter-copy"><h2>10. Nihai Sonuç (Ebediyet)</h2><p>Ahiret sürecinin sonunda insanlar, yaptıkları amellere göre ebedi kalacakları mekânlara yerleştirilir. Bu aşama, sonsuz mutluluk veya azap ile sonuçlanan nihai varış noktasıdır.</p></div>
+<aside class="chapter-media"><div class="media-placeholder"><span>İllüstrasyon / medya alanı</span><small>Bu bölüm için görsel sonradan eklenebilir.</small></div></aside>
+</header>
+<details class="diagram-card"><summary><div><strong>Nihai Sonuç</strong><p>Sürecin ebedi sonuçları.</p></div><span class="summary-tag">Diyagramı Aç</span></summary><div class="mermaid">flowchart TD
+A[Nihai Sonuç] --&gt; B[Cennet]
+A --&gt; C[Cehennem]
+B --&gt; D[Sonsuz mutluluk]
+B --&gt; E[Nimet ve huzur]
+C --&gt; F[Azap ve ceza]
+C --&gt; G[Dereceler ve katmanlar]</div></details>
+<div class="chapter-overview"><div><h3>Bölüm haritası</h3><p>Bu bölümün alt başlıklarına hızlı geçiş.</p></div><ol><li><a href="#101-cennet-darun-nam">10.1 Cennet (Dârü’n-Naîm)<span>2 alt bölüm</span></a></li><li><a href="#102-cehennem-darul-azab">10.2 Cehennem (Dârü’l-Azab)<span>2 alt bölüm</span></a></li></ol></div>
+<section id="101-cennet-darun-nam" class="topic">
+<header class="topic-header"><h3>10.1 Cennet (Dârü’n-Naîm)</h3><p>Cennet, iman eden ve salih amel işleyenler için hazırlanmış ebedi mutluluk yurdudur.</p></header>
+<article id="1011-sonsuz-mutluluk" class="subtopic">
+<div class="subtopic-head"><h4>10.1.1 Sonsuz mutluluk</h4><button class="copy-link" data-link="#1011-sonsuz-mutluluk">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Cennete girenler için hiçbir sıkıntı, korku veya üzüntü yoktur; mutluluk ebedidir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">TEVBE 9:72</div><pre>        Allah, mümin erkeklere ve mümin kadınlara, altından ırmaklar akan, içinde ebedî kalacakları cennetler ve Adn cennetlerinde güzel meskenler vadetmiştir. Allah’ın rızası ise hepsinden büyüktür. İşte büyük kurtuluş budur.</pre></div><div class="ref-item"><div class="ref-meta">FUSSİLET 41:30-31</div><pre>        &quot;Rabbimiz Allah’tır&quot; deyip sonra dosdoğru olanlara melekler iner ve der ki: &quot;Korkmayın, üzülmeyin, size vaat edilen cennetle sevinin.&quot;</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Bed’ü’l-Halk, 8</div><pre>    &quot;Cennette ne göz görmüş, ne kulak işitmiş, ne de insanın kalbinden geçmiştir.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Ebediyet: Cennet hayatı sonsuzdur.</li><li>Kusursuz Mutluluk: Hiçbir eksiklik ve sıkıntı yoktur.</li><li>İlahi Lütuf: Bu nimetler insan tasavvurunun ötesindedir.</li></ul></aside>
+</article>
+<article id="1012-nimetler-ve-huzur" class="subtopic">
+<div class="subtopic-head"><h4>10.1.2 Nimetler ve huzur</h4><button class="copy-link" data-link="#1012-nimetler-ve-huzur">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Cennette maddi ve manevi sayısız nimet bulunur; huzur ve tatmin en üst seviyededir.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">İNSAN 76:12-14</div><pre>        Sabretmelerine karşılık onları cennet ve ipekle ödüllendirmiştir.
+
+        Orada koltuklar üzerine yaslanırlar; ne yakıcı güneş görürler ne de dondurucu soğuk.
+
+        Cennetin gölgeleri üzerlerine yaklaşmış ve meyveleri kolayca elde edilecek şekilde eğilmiştir.</pre></div><div class="ref-item"><div class="ref-meta">RAHMAN 55:46-48</div><pre>        Rabbinin huzurunda durmaktan korkan kimse için iki cennet vardır.
+
+        O cennetler türlü ağaçlarla doludur.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Müslim, Cennet, 2</div><pre>    &quot;Cennet ehline denilir ki: Artık siz ebediyen sağlıklı kalacak, asla hasta olmayacaksınız...&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Maddi Nimetler: Yiyecek, içecek ve çevresel güzellikler.</li><li>Manevi Huzur: Kalpte tam bir tatmin ve huzur vardır.</li><li>Süreklilik: Nimetler kesintisiz ve eksiksizdir.</li></ul></aside>
+</article>
+</section>
+<section id="102-cehennem-darul-azab" class="topic">
+<header class="topic-header"><h3>10.2 Cehennem (Dârü’l-Azab)</h3><p>Cehennem, inkâr edenler ve büyük günah sahipleri için hazırlanmış azap yurdudur.</p></header>
+<article id="1021-azap-ve-ceza" class="subtopic">
+<div class="subtopic-head"><h4>10.2.1 Azap ve ceza</h4><button class="copy-link" data-link="#1021-azap-ve-ceza">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Cehennem, hem fiziksel hem de ruhsal azapların yaşandığı bir mekândır.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">NİSA 4:56</div><pre>        Ayetlerimizi inkâr edenleri yakında ateşe atacağız. Derileri her yandıkça, azabı tatmaları için onları başka derilerle değiştireceğiz.</pre></div><div class="ref-item"><div class="ref-meta">HACC 22:19-22</div><pre>        İşte bunlar Rableri hakkında tartışan iki hasımdır. İnkâr edenler için ateşten elbiseler biçilmiştir...</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Buhari, Rikak, 51</div><pre>    &quot;Cehennem ateşi, dünya ateşinden yetmiş kat daha şiddetlidir.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Şiddet: Azap son derece güçlü ve süreklidir.</li><li>Fiziksel ve Ruhsal Boyut: Hem bedensel hem psikolojik acı vardır.</li><li>Uyarı: Bu tasvirler, insanı dünya hayatında dikkatli olmaya yönlendirir.</li></ul></aside>
+</article>
+<article id="1022-dereceler-ve-katmanlar" class="subtopic">
+<div class="subtopic-head"><h4>10.2.2 Dereceler ve katmanlar</h4><button class="copy-link" data-link="#1022-dereceler-ve-katmanlar">Bağlantıyı kopyala</button></div>
+<div class="reading-copy"><p>Cehennem tek tip değildir; farklı dereceler ve azap seviyeleri vardır.</p></div>
+<details class="accordion ayet"><summary><span>Ayetler (2)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">HİCR 15:43-44</div><pre>        Şüphesiz cehennem onların hepsinin buluşma yeridir.
+
+        Onun yedi kapısı vardır; her kapıdan girecekler için ayrılmış bir grup vardır.</pre></div><div class="ref-item"><div class="ref-meta">NİSA 4:145</div><pre>        Münafıklar, cehennemin en alt tabakasındadırlar.</pre></div></div></details>
+<details class="accordion hadis"><summary><span>Hadisler (1)</span><span class="chev">+</span></summary><div class="accordion-body"><div class="ref-item"><div class="ref-meta">Müslim, İman, 363</div><pre>    &quot;Cehennem ehlinin en hafif azap göreni, ayaklarının altına konulan ateşten dolayı beyni kaynayan kimsedir.&quot;</pre></div></div></details>
+<aside class="interpretation"><h5>Hadisin İçeriği ve Anlamı</h5><ul><li>Derecelendirme: Azap, kişinin ameline göre değişir.</li><li>Alt Tabakalar: En ağır azap, en alt seviyededir.</li><li>İlahi Adalet: Herkes yaptığının karşılığını tam olarak alır.</li></ul></aside>
+</article>
+</section>
+</div></section></main>
+<footer class="footer"><p>Bu web taslağı, yüklenen markdown dosyasındaki ana bölüm hiyerarşisini ve referans yapısını koruyarak dönüştürülmüştür. İllüstrasyon alanları bilerek ikincil tutuldu; sonraki iterasyonda gerçek görseller, özel ikonografi ve bölüm bazlı sanat yönü eklenebilir.</p></footer>
+<div class="utility-bar"><button class="utility-btn" id="expandAll">Tüm referansları aç</button><button class="utility-btn" id="toTop">Yukarı çık</button></div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+</script>
+<script>
+const progress = document.getElementById('siteProgress');
+const sections = [...document.querySelectorAll('.chapter')];
+const links = [...document.querySelectorAll('.nav-links a')];
+const accordions = [...document.querySelectorAll('.accordion')];
+
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  progress.style.width = scrolled + '%';
+  let current = sections[0]?.id;
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= 120) current = sec.id;
+  });
+  links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+});
+
+document.getElementById('toTop').addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+let expanded = false;
+document.getElementById('expandAll').addEventListener('click', (e) => {
+  expanded = !expanded;
+  accordions.forEach(el => el.open = expanded);
+  e.currentTarget.textContent = expanded ? 'Tüm referansları kapat' : 'Tüm referansları aç';
+});
+
+document.querySelectorAll('.copy-link').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const url = new URL(window.location.href);
+    url.hash = btn.dataset.link;
+    try {
+      await navigator.clipboard.writeText(url.toString());
+      const old = btn.textContent;
+      btn.textContent = 'Kopyalandı';
+      setTimeout(() => btn.textContent = old, 1400);
+    } catch {
+      location.hash = btn.dataset.link;
+    }
+  })
+});
+</script>
+</body></html>
